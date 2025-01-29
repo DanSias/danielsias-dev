@@ -1,7 +1,9 @@
 // src/components/HomePage.tsx
+import SkillsSection from "@/components/SkillsSection";
+
 export default function HomePage() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
+    <main className="flex flex-col items-center justify-center min-h-screen px-4">
       <div className="text-center">
         <h1 className="text-5xl font-bold text-gray-900">Daniel Sias</h1>
         <p className="text-xl text-gray-600 mt-2">
@@ -25,6 +27,7 @@ export default function HomePage() {
           </a>
         </div>
       </div>
+      <SkillsSection />
     </main>
   );
 }
