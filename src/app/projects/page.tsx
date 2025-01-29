@@ -2,11 +2,9 @@ import { projects } from "@/constants/projects";
 
 export default function ProjectsPage() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4 py-10">
+    <main className="flex flex-col items-center justify-center min-h-screen px-4 py-10">
       <div className="max-w-4xl w-full">
-        <h1 className="text-4xl font-bold text-gray-900 text-center">
-          Projects
-        </h1>
+        <h1 className="text-4xl font-bold text-center">Projects</h1>
         <p className="text-lg text-gray-600 text-center mt-2">
           A collection of my work, ranging from full-stack applications to
           AI-powered tools.
