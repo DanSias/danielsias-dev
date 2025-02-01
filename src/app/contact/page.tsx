@@ -1,9 +1,9 @@
-import ContactButtons from "@/components/ContactButtons";
+import ContactButtons from "./ContactButtons";
 
 export default function ContactPage() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen px-4">
-      <div className="max-w-2xl w-full bg-white dark:bg-slate-800 p-8 shadow-lg rounded-lg">
+      <div className="max-w-2xl w-full p-8 ">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-sky-100 text-center">
           Contact Me
         </h1>
@@ -12,14 +12,16 @@ export default function ContactPage() {
         </p>
 
         <ContactButtons />
-        <h1 className="text-3xl mt-12 font-bold text-gray-900 dark:text-sky-100 text-center">
+        {/* <hr className="my-16 dark:border-sky-900" /> */}
+
+        {/* <h1 className="text-3xl mt-12 font-bold text-gray-900 dark:text-sky-100 text-center">
           Send A Message
         </h1>
         <p className="text-lg text-gray-600 dark:text-sky-200 text-center mt-2">
           Use the form below to message me directly.
-        </p>
+        </p> */}
         {/* Contact Form */}
-        <form className="mt-6 flex flex-col gap-4">
+        {/* <form className="mt-6 flex flex-col gap-4">
           <div>
             <label className="block text-gray-700 dark:text-sky-100 font-medium">
               Name
@@ -60,7 +62,7 @@ export default function ContactPage() {
             className="w-full bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-700 transition">
             Send Message
           </button>
-        </form>
+        </form> */}
       </div>
     </main>
   );
