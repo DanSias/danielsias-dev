@@ -1,33 +1,44 @@
-// src/components/HomePage.tsx
-import SkillsSection from "@/components/SkillsSection";
+"use client";
+
+import HeroSection from "./home/HeroSection";
+import SkillsIcons from "@/components/home/SkillsIcons";
+import EducationRow from "@/app/education/DegreeBasics";
+import ProfessionalHighlights from "./home/ProfessionalHighlights";
+import FeaturedProjects from "./home/FeaturedProjects";
+import FinalCTA from "./home/PageOutro";
 
 export default function HomePage() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen px-4">
-      <div className="text-center">
-        <h1 className="text-5xl font-bold text-gray-900">Daniel Sias</h1>
-        <p className="text-xl text-gray-600 mt-2">
-          Software Engineer | Full-Stack Developer
-        </p>
-        <p className="text-lg text-gray-500 mt-4 max-w-2xl">
-          Passionate about building scalable web applications and solving
-          complex problems with modern technologies.
-        </p>
+    <main className="mx-auto px-6 py-12">
+      {/* Hero Section */}
+      <section className="text-center">
+        <HeroSection />
+      </section>
 
-        <div className="mt-6 flex justify-center gap-4">
-          <a
-            href="/projects"
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg text-lg font-semibold shadow-md hover:bg-blue-700 transition">
-            View Projects
-          </a>
-          <a
-            href="/contact"
-            className="px-6 py-3 bg-gray-800 text-white rounded-lg text-lg font-semibold shadow-md hover:bg-gray-900 transition">
-            Contact Me
-          </a>
-        </div>
-      </div>
-      <SkillsSection />
+      {/* Professional Highlights from Work Experience */}
+      <section className="pt-16">
+        <ProfessionalHighlights />
+      </section>
+
+      {/* Featured Projects */}
+      <section className="mt-16">
+        <FeaturedProjects />
+      </section>
+
+      {/* Skills Section */}
+      <section className="mt-16">
+        <SkillsIcons />
+      </section>
+
+      {/* Education Section */}
+      <section className="mt-16">
+        <EducationRow />
+      </section>
+
+      {/* Contact Section */}
+      <section className="my-32 text-center">
+        <FinalCTA />
+      </section>
     </main>
   );
 }
