@@ -86,10 +86,10 @@ const SkillsIcons = () => {
           </Tooltip.Provider>
         ))}
       </div>
-      <div className="mt-6">
+      <div className="">
         <Link
           href="/skills"
-          className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
+          className="text-blue-600 dark:text-sky-400 font-semibold hover:underline">
           View All Skills →
         </Link>
       </div>

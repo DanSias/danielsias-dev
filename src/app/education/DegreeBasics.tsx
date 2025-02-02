@@ -46,7 +46,7 @@ const EducationRow: React.FC = () => {
       <p className="text-lg text-gray-600 dark:text-gray-300 mt-2 text-center">
         <Link
           href="/education"
-          className="text-blue-600 dark:text-blue-400 font-semibold hover:underline ">
+          className="text-blue-600 dark:text-sky-400 font-semibold hover:underline ">
           View Education →
         </Link>
       </p>

@@ -60,7 +60,7 @@ const ProfessionalHighlights: React.FC = () => {
       <div className="mt-8 text-center">
         <a
           href="/experience"
-          className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
+          className="text-blue-600 dark:text-sky-400 font-semibold hover:underline">
           View Full Experience →
         </a>
       </div>
