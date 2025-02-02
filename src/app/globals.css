@@ -45,6 +45,10 @@ html {
   @apply text-2xl font-semibold text-blue-600 dark:text-sky-200 mt-6 mb-3;
 }
 
+.text-primary {
+  @apply text-slate-800 dark:text-sky-100;
+}
+
 .text-heading {
   @apply text-4xl text-center font-bold text-gray-900 dark:text-sky-50;
 }
