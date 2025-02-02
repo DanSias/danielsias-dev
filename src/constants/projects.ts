@@ -1,7 +1,7 @@
 export const projects = [
   // 🚀 High-Impact Full-Stack & AI-Powered Tools
   {
-    title: "Nexus: Advanced Analytics Platform",
+    title: "Nexus: Advanced Analytics Reporting Platform",
     company: "Pearson Online Learning Services",
     description:
       "Developed a React/Node.js analytics dashboard with BigQuery integration, cutting report generation time by 85% and automating KPI tracking for $25M+ marketing spend.",
