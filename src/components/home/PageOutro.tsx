@@ -23,6 +23,11 @@ const FinalCTA: React.FC = () => {
           className="px-6 py-3 bg-gray-200 dark:bg-gray-800 dark:text-white text-gray-800 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-700 transition">
           Connect on LinkedIn
         </Link>
+        <Link
+          href="/resume"
+          className="px-6 py-3 bg-gray-700 text-white rounded-lg font-semibold hover:bg-gray-800 transition">
+          📄 View Resume
+        </Link>
       </div>
     </section>
   );

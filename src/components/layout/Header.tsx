@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
-import { FaCode, FaBars, FaTimes } from "react-icons/fa";
+import { FaCode, FaHome, FaBars, FaTimes, FaFilePdf } from "react-icons/fa";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white dark:bg-slate-900/60 dark:backdrop-blur-md shadow-md z-50">
@@ -15,11 +17,15 @@ export default function Header() {
         <Link
           href="/"
           className="flex items-center text-2xl font-bold text-slate-700 dark:text-sky-100 hover:text-blue-600">
-          <FaCode className="text-2xl mr-3" />
-          Daniel Sias
+          {pathname === "/" ? (
+            <FaCode className="text-2xl mr-3" />
+          ) : (
+            <FaHome className="text-2xl mr-3" />
+          )}
+          <span className="font-montserrat">Daniel Sias</span>
         </Link>
 
-        {/* Desktop Navigation (Hidden on Mobile) */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6">
           <Link href="/about" className="header-link">
             About
@@ -27,21 +33,25 @@ export default function Header() {
           <Link href="/experience" className="header-link">
             Experience
           </Link>
-          <Link href="/education" className="header-link">
-            Education
-          </Link>
           <Link href="/projects" className="header-link">
             Projects
           </Link>
           <Link href="/skills" className="header-link">
             Skills
           </Link>
+          <Link href="/education" className="header-link">
+            Education
+          </Link>
+          <Link href="/resume" className="header-link flex items-center gap-2">
+            <FaFilePdf className="text-red-500 dark:text-red-300" />
+            Resume
+          </Link>
           <Link href="/contact" className="header-link">
             Contact
           </Link>
         </nav>
 
-        {/* Mobile Menu Button in Center (Replaces Navigation Links) */}
+        {/* Mobile Menu Button in Center */}
         <div className="md:hidden flex-1 flex justify-center">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -78,12 +88,6 @@ export default function Header() {
               Experience
             </Link>
             <Link
-              href="/education"
-              className="mobile-link"
-              onClick={() => setMenuOpen(false)}>
-              Education
-            </Link>
-            <Link
               href="/projects"
               className="mobile-link"
               onClick={() => setMenuOpen(false)}>
@@ -94,6 +98,19 @@ export default function Header() {
               className="mobile-link"
               onClick={() => setMenuOpen(false)}>
               Skills
+            </Link>
+            <Link
+              href="/education"
+              className="mobile-link"
+              onClick={() => setMenuOpen(false)}>
+              Education
+            </Link>
+            <Link
+              href="/resume"
+              className="mobile-link flex items-center gap-2"
+              onClick={() => setMenuOpen(false)}>
+              <FaFilePdf className="text-red-500" />
+              Resume
             </Link>
             <Link
               href="/contact"
