@@ -63,11 +63,11 @@ const SkillsIcons = () => {
             <Tooltip.Root>
               <Tooltip.Trigger asChild>
                 <div className="flex justify-center">
-                  <div className="rounded-xl p-6 text-center shadow-xl border border-slate-700 my-12 w-full max-w-xs">
+                  <div className="rounded-xl p-6 text-center shadow-xl border border-slate-400 my-12 w-full max-w-xs">
                     <div className="mx-auto flex h-16 w-16 -translate-y-14 transform items-center justify-center rounded-full bg-slate-700 dark:bg-slate-800 shadow-lg">
                       <skill.icon className="text-sky-500 dark:text-sky-200 text-4xl" />
                     </div>
-                    <h1 className="text-darken mb-3 text-lg font-medium lg:px-8">
+                    <h1 className="text-primary mb-3 text-lg font-medium lg:px-8">
                       {skill.title}
                     </h1>
                   </div>
