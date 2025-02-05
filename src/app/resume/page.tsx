@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import EmbeddedResume from "./Embed";
 
 export default function ResumePage() {
   const handleDownload = () => {
@@ -13,15 +14,26 @@ export default function ResumePage() {
   };
   return (
     <main className="flex flex-col items-center justify-center min-h-screen px-4 pt-24">
-      <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-sky-100">
-        My Resume
-      </h1>
-      <p className="text-lg text-gray-600 dark:text-sky-200 text-center mt-2">
-        View or download my resume below.
-      </p>
+      <section className="max-w-3xl mx-auto p-6 text-sky-200">
+        <div className="w-full flex justify-between items-center">
+          {/* Left-aligned Text */}
+          <h2 className="text-xl font-bold text-left mr-8">View My Resume</h2>
+
+          {/* Right-aligned Button */}
+          <Link
+            href="/resume.pdf"
+            download
+            onClick={handleDownload}
+            target="_blank"
+            className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-all">
+            📄 Download as PDF
+          </Link>
+        </div>
+      </section>
+      <EmbeddedResume />
 
       {/* Download Button */}
-      <div className="mt-6">
+      {/* <div className="mt-6">
         <Link
           href="/resume.pdf"
           target="_blank"
@@ -30,16 +42,7 @@ export default function ResumePage() {
           className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition">
           📄 Download Resume (PDF)
         </Link>
-      </div>
-
-      {/* PDF Embed in an iFrame */}
-      <div className="mt-6 w-full max-w-5xl h-[1300px] border border-gray-300 dark:border-gray-700 shadow-lg rounded-lg overflow-hidden">
-        <iframe
-          src="/resume.pdf#view=Fit"
-          className="w-full h-full"
-          title="Resume PDF"
-        />
-      </div>
+      </div> */}
     </main>
   );
 }
