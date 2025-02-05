@@ -3,8 +3,10 @@ const SEOAnalystExperience: React.FC = () => {
     <section className="max-w-3xl mx-auto p-6 text-gray-800">
       {/* Job Title & Company */}
       <h3 className="text-lg font-bold">Search Engine Optimization Analyst</h3>
-      <p className="text-sm text-gray-600">Pearson Online Learning Services</p>
-
+      <p className="text-sm text-gray-600 flex justify-between">
+        <span>Pearson Online Learning Services</span>
+        <span>June 2013 – Sept 2015</span>
+      </p>
       {/* Introduction Paragraph */}
       <p className="text-sm mt-4">
         Drove organic growth strategies, data-driven SEO analysis, and

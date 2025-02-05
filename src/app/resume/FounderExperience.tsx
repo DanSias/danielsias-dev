@@ -5,8 +5,11 @@ const FounderExperience: React.FC = () => {
       <h3 className="text-lg font-bold">
         Founder & Full Stack Developer / Marketing Consultant
       </h3>
-      <p className="text-sm text-gray-600">Liquid Gravity Engineering</p>
 
+      <p className="text-sm text-gray-600 flex justify-between">
+        <span>Liquid Gravity Engineering</span>
+        <span>July 2005 – June 2013</span>
+      </p>
       {/* Introduction Paragraph */}
       <p className="text-sm mt-4">
         Founded and led a <strong>marketing technology firm</strong>, developing

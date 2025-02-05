@@ -5,8 +5,9 @@ const FullStackExperience: React.FC = () => {
       <h3 className="text-lg font-bold">
         Data & Analytics Lead Developer / Data Analyst
       </h3>
-      <p className="text-sm text-gray-600 mb-3">
-        Pearson Online Learning Services
+      <p className="text-sm text-gray-600 flex justify-between mb-2">
+        <span>Pearson Online Learning Services</span>
+        <span>Sept 2015 – July 2024</span>
       </p>
 
       {/* Introduction Paragraph */}
