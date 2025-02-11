@@ -4,6 +4,7 @@ import HeroSection from "./home/HeroSection";
 import SkillsIcons from "@/components/home/SkillsIcons";
 import EducationRow from "@/app/education/DegreeBasics";
 import ProfessionalHighlights from "./home/ProfessionalHighlights";
+import LiveProjects from "./home/LiveProjects";
 import FeaturedProjects from "./home/FeaturedProjects";
 import FinalCTA from "./home/PageOutro";
 
@@ -18,6 +19,11 @@ export default function HomePage() {
       {/* Professional Highlights from Work Experience */}
       <section className="pt-20">
         <ProfessionalHighlights />
+      </section>
+
+      {/* Live Projects */}
+      <section className="mt-16">
+        <LiveProjects />
       </section>
 
       {/* Featured Projects */}
