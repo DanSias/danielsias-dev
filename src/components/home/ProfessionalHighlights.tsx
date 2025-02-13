@@ -3,32 +3,32 @@ const ProfessionalHighlights: React.FC = () => {
     {
       title: "Advanced Analytics Platform",
       description:
-        "Built a React/Node.js analytics dashboard that cut reporting time by 85% and automated KPI tracking for $25M+ in marketing spend.",
+        "Led the development of a custom analytics dashboard that transformed our marketing reporting process. Using React and Node.js, we slashed reporting time from days to hours while tracking over $25M in marketing investments.",
     },
     {
       title: "Marketing Forecasting Automation",
       description:
-        "Developed a budgeting & forecasting system that replaced spreadsheets, saving teams 20+ hours per week in manual workflows.",
+        "Tackled our team's biggest pain point by replacing clunky spreadsheets with a streamlined budgeting system. This gave marketing teams back nearly three working days each month, previously lost to manual data entry.",
     },
     {
       title: "API-Driven Automation",
       description:
-        "Integrated Salesforce, BigQuery, and ad platforms, enabling real-time marketing performance tracking and automated reporting.",
+        "Connected our core business platforms - Salesforce, BigQuery, and various ad services - to create a single source of truth for marketing data. This enabled our team to monitor performance in real-time and generate reports automatically.",
     },
     {
       title: "Marketing Performance Tracker",
       description:
-        "Created an analytics dashboard to track campaign performance, improving engagement and refining A/B testing strategies.",
+        "Built an intuitive dashboard that helped our marketing team make data-driven decisions. This tool became central to improving campaign performance and running more effective A/B tests.",
     },
     {
       title: "Full-Stack System Architecture",
       description:
-        "Engineered scalable applications using React, Node.js, PostgreSQL, and cloud infrastructure, optimizing system efficiency.",
+        "Designed and built scalable applications from the ground up, combining React frontends with Node.js backends and PostgreSQL databases. Each project focused on making our systems faster and more reliable.",
     },
     {
       title: "Executive Leadership Dashboard",
       description:
-        "Developed a high-level dashboard providing executives with insights into departmental performance, forecasting trends, and key business metrics.",
+        "Created a comprehensive view of business performance that became our executives' go-to resource for tracking department metrics, analyzing trends, and making strategic decisions.",
     },
   ];
 
