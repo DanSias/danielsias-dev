@@ -11,39 +11,39 @@ import {
 
 const skills = [
   {
-    title: "Interface Development",
+    title: "Front-End Craftsman",
     description:
-      "Building dynamic, interactive, and responsive user interfaces with React, Next.js, and modern JavaScript frameworks. Focused on optimizing performance, accessibility, and user experience.",
+      "Turning complex requirements into elegant user experiences through React and Next.js. My interfaces don't just look good - they're fast, accessible, and built to scale with your business needs.",
     icon: FaCode,
   },
   {
-    title: "Scalable API Design",
+    title: "API & Backend Architecture",
     description:
-      "Building scalable APIs, microservices, and server-side applications with Node.js, PHP, and cloud-based infrastructure. Optimizing data processing and backend performance.",
+      "Creating robust digital foundations with Node.js and PHP that handle millions of requests without breaking a sweat. My APIs are built for growth, with clean documentation that your team will actually want to use.",
     icon: FaServer,
   },
   {
-    title: "Technology Architecting",
+    title: "Solutions Architect",
     description:
-      "Building scalable, automated, and flexible technology solutions that enhance business efficiency, streamline operations, and improve long-term profitability. Experience with CRM integrations, analytics platforms, and custom development solutions.",
+      "Mapping out the big picture while sweating the small details. I specialize in connecting disparate systems into cohesive solutions that solve real business problems, from CRM integrations to custom analytics platforms.",
     icon: FaProjectDiagram,
   },
   {
-    title: "CRM and Business Intelligence",
+    title: "Data Systems Specialist",
     description:
-      "Expertise in implementing and optimizing CRM systems like Salesforce, Infusionsoft, and custom solutions. Experience in developing data-driven business intelligence tools that improve visibility and decision-making.",
+      "Unlocking the full potential of your business data through customized CRM implementations and BI tools. Whether it's Salesforce, Infusionsoft, or a custom solution, I help teams make better decisions faster.",
     icon: FaDatabase,
   },
   {
-    title: "Performance Marketing & Data Analytics",
+    title: "Marketing Analytics Expert",
     description:
-      "Expertise in tracking marketing attribution, analyzing key performance indicators (KPIs), and refining strategies based on actionable insights. Experience with Google Analytics, Tableau, and custom BI dashboards.",
+      "Transforming raw data into actionable insights that drive marketing success. I combine deep experience with Google Analytics and Tableau with custom dashboard development to give you the full picture of campaign performance.",
     icon: FaChartLine,
   },
   {
-    title: "Marketing Funnels & Automation",
+    title: "Revenue System Designer",
     description:
-      "Designing, implementing, and optimizing high-converting marketing funnels. Leveraging automation tools to improve lead nurturing, email marketing workflows, and sales processes.",
+      "Engineering the machinery that turns prospects into loyal customers. I create automated marketing funnels that nurture leads, streamline email workflows, and optimize every step of your sales process.",
     icon: FaCogs,
   },
 ];
