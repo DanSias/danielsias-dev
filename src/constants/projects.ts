@@ -1,10 +1,10 @@
 export const projects = [
   // 🚀 High-Impact Full-Stack & AI-Powered Tools
   {
-    title: "Nexus: Advanced Analytics Reporting Platform",
+    title: "Nexus: Analytics Command Center",
     company: "Pearson Online Learning Services",
     description:
-      "Developed a React/Node.js analytics dashboard with BigQuery integration, cutting report generation time by 85% and automating KPI tracking for $25M+ marketing spend.",
+      "Built from the ground up to solve our data bottleneck, Nexus transformed how we handled marketing analytics. By connecting React and Node.js with BigQuery, we turned a multi-day reporting marathon into a streamlined process that took hours. The platform now actively monitors over $25M in marketing investments, giving teams instant access to their KPIs and enabling rapid, data-driven campaign adjustments.",
     technologies: [
       "React.js",
       "Node.js",
@@ -54,10 +54,10 @@ export const projects = [
 
   // 📊 Data-Driven Marketing & Business Intelligence Projects
   {
-    title: "Executive Leadership Dashboard",
+    title: "Executive Insights Dashboard",
     company: "Pearson Online Learning Services",
     description:
-      "Developed a high-level dashboard providing executives with a holistic view of departmental performance, including forecasts, progress toward annual goals, and areas requiring attention. Enabled leadership to identify shortfalls and communicate directly with department managers.",
+      'What started as a request for "better visibility" evolved into leadership\'s daily compass for decision-making. This interactive dashboard brings together department performance, annual targets, and emerging challenges in one clear view. The real game-changer? Department heads can now spot issues and coordinate solutions directly through the platform, cutting through traditional communication barriers.',
     technologies: [
       "React.js",
       "Node.js",
@@ -113,10 +113,10 @@ export const projects = [
 
   // 💰 Business & Financial Process Automation
   {
-    title: "Marketing Spend & Lead Forecasting System",
+    title: "Marketing Budget & Forecast Hub",
     company: "Pearson Online Learning Services",
     description:
-      "Rebuilt the monthly forecasting and annual budgeting process by replacing shared spreadsheets with a database-driven web interface, enabling marketing channel owners to input forecasts, receive approvals, and communicate directly within the system.",
+      "Tackled the chaos of spreadsheet-based planning by creating a centralized system that marketing teams actually enjoy using. This web-based platform streamlined our entire budget cycle - from initial forecasts to final approvals. Channel owners can now update projections, get sign-off, and collaborate with their teams all in one place, turning what was once a monthly headache into a smooth, continuous process.",
     technologies: [
       "React.js",
       "Node.js",
