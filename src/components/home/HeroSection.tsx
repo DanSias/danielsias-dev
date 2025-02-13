@@ -5,7 +5,7 @@ const HeroSection: React.FC = () => {
     <section className="text-center">
       <h1 className="text-5xl font-bold text-primary">Daniel Sias</h1>
       <p className="text-lg text-gray-600 dark:text-gray-300 mt-4">
-        Full-Stack Developer | AI & Automation | Data-Driven Solutions
+        Engineering Smart Solutions at the Intersection of AI and Data
       </p>
       <div className="mt-6 flex justify-center gap-4">
         <Link
