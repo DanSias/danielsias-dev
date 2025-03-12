@@ -58,8 +58,8 @@ const Resume: React.FC = () => {
           </p>
           <p>
             <span className="font-semibold">Backend Architecture:</span> Node.js
-            • Express.js • PostgreSQL • Prisma • BigQuery • RESTful APIs • OAuth
-            • PHP
+            • Express.js • FastAPI • Django • PostgreSQL • BigQuery • RESTful
+            APIs • OAuth • PHP
           </p>
           <p>
             <span className="font-semibold">Cloud & DevOps:</span> Supabase •
