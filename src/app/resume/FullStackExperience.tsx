@@ -1,7 +1,6 @@
 const FullStackExperience: React.FC = () => {
   return (
     <section className="max-w-3xl mx-auto p-6 text-gray-800">
-      {/* Job Title & Company */}
       <h3 className="text-lg font-bold">
         Data & Analytics Lead Developer / Data Analyst
       </h3>
@@ -10,51 +9,47 @@ const FullStackExperience: React.FC = () => {
         <span>Sept 2015 – July 2024</span>
       </p>
 
-      {/* Introduction Paragraph */}
       <p className="text-sm mb-4">
-        Developed data-driven applications, automation tools, and real-time
-        analytics dashboards to optimize marketing performance, finance
-        forecasting, and sales operations. Focused on scalable full-stack
-        development, API integrations, and workflow automation to enhance
-        efficiency.
+        Built scalable, data-driven applications and automation tools to support
+        marketing, finance, and sales teams across a global education business.
+        Focused on full-stack architecture, API integration, and real-time
+        analytics systems that improved efficiency, enhanced visibility, and
+        powered smarter campaign decisions.
       </p>
 
-      {/* Bulleted List with Proper Indentation */}
       <ul className="list-disc pl-5 text-sm space-y-2">
         <li className="pl-2">
           Built a <strong>React/Node analytics platform</strong> integrating
-          BigQuery & Salesforce, cutting report generation time by{" "}
-          <strong>85%</strong> and automating KPI tracking for{" "}
-          <strong>$25M+</strong> in marketing spend.
+          BigQuery & Salesforce, reducing reporting time by <strong>85%</strong>{" "}
+          and automating KPI tracking for <strong>$25M+</strong> in marketing
+          and ad spend.
         </li>
         <li className="pl-2">
-          Developed a <strong>marketing spend forecasting system</strong>,
-          replacing manual spreadsheets with a centralized web-based platform,
-          saving teams <strong>20+ hours per month</strong> and improving budget
-          accuracy.
+          Developed a <strong>spend forecasting system</strong> to replace
+          spreadsheets, improving budget accuracy and pacing while saving teams{" "}
+          <strong>20+ hours per month</strong>.
         </li>
         <li className="pl-2">
-          Designed and deployed <strong>API-driven automation</strong> to
-          connect Salesforce, BigQuery, and ad platforms, enabling real-time
-          marketing performance tracking.
+          Deployed <strong>API-driven integrations</strong> across Salesforce,
+          BigQuery, and ad platforms (e.g. Google Ads, Meta) to enable real-time
+          campaign tracking, attribution, and performance insights.
         </li>
         <li className="pl-2">
-          Led the creation of an{" "}
-          <strong>email marketing performance tracker</strong>, integrating
-          Google Analytics API & Salesforce Marketing Cloud to improve
-          engagement and A/B testing efficiency.
+          Led development of an{" "}
+          <strong>email marketing performance dashboard</strong> using Google
+          Analytics API & Salesforce Marketing Cloud, improving A/B testing and
+          engagement analysis.
         </li>
         <li className="pl-2">
-          Built a <strong>PPC tracking link generator</strong>, standardizing
-          URL parameters to ensure accurate attribution, minimize tracking
-          errors, and improve campaign performance across multiple advertising
-          platforms.
+          Built a <strong>PPC tracking link generator</strong> to standardize
+          UTM parameters, ensure attribution accuracy, and improve campaign
+          performance across paid media channels.
         </li>
         <li className="pl-2">
-          Collaborated on the{" "}
-          <strong>Salesforce migration and data warehouse setup</strong>,
-          transitioning legacy systems to BigQuery & cloud-based reporting while
-          ensuring data integrity.
+          Supported a{" "}
+          <strong>Salesforce migration and data warehouse rebuild</strong>,
+          transitioning legacy infrastructure to BigQuery with robust ETL
+          pipelines and clean reporting layers.
         </li>
       </ul>
     </section>
