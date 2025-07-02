@@ -17,7 +17,7 @@ export default function HomePage() {
       </section>
 
       {/* Professional Highlights from Work Experience */}
-      <section className="pt-20">
+      <section className="pt-16">
         <ProfessionalHighlights />
       </section>
 
