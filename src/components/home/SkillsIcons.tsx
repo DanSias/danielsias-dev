@@ -13,37 +13,37 @@ const skills = [
   {
     title: "Front-End Craftsman",
     description:
-      "Turning complex requirements into elegant user experiences through React and Next.js. My interfaces don't just look good - they're fast, accessible, and built to scale with your business needs.",
+      "Turning complex requirements into elegant user experiences with React and Next.js. Interfaces are built for speed, accessibility, and flexibility across marketing and analytics tools.",
     icon: FaCode,
   },
   {
     title: "API & Backend Architecture",
     description:
-      "Creating robust digital foundations with Node.js and PHP that handle millions of requests without breaking a sweat. My APIs are built for growth, with clean documentation that your team will actually want to use.",
+      "Creating reliable, scalable services with Node.js and PHP. My APIs support marketing, CRM, and ad platforms, with clean documentation your team will actually use.",
     icon: FaServer,
   },
   {
     title: "Solutions Architect",
     description:
-      "Mapping out the big picture while sweating the small details. I specialize in connecting disparate systems into cohesive solutions that solve real business problems, from CRM integrations to custom analytics platforms.",
+      "Connecting CRM, analytics, and ad platforms into cohesive systems that solve business problems—from attribution to budget tracking to real-time reporting.",
     icon: FaProjectDiagram,
   },
   {
     title: "Data Systems Specialist",
     description:
-      "Unlocking the full potential of your business data through customized CRM implementations and BI tools. Whether it's Salesforce, Infusionsoft, or a custom solution, I help teams make better decisions faster.",
+      "Unlocking the full potential of your data through Salesforce, BigQuery, and custom pipelines. I help teams track performance, improve attribution, and make faster decisions.",
     icon: FaDatabase,
   },
   {
     title: "Marketing Analytics Expert",
     description:
-      "Transforming raw data into actionable insights that drive marketing success. I combine deep experience with Google Analytics and Tableau with custom dashboard development to give you the full picture of campaign performance.",
+      "Transforming raw metrics into insights that drive performance. From GA and Tableau to custom dashboards, I help teams measure ROAS, campaign impact, and channel efficiency.",
     icon: FaChartLine,
   },
   {
     title: "Revenue System Designer",
     description:
-      "Engineering the machinery that turns prospects into loyal customers. I create automated marketing funnels that nurture leads, streamline email workflows, and optimize every step of your sales process.",
+      "Engineering the workflows that convert. I build marketing funnels, automate lead nurture, and optimize paths from first click to closed deal—powered by data, not guesswork.",
     icon: FaCogs,
   },
 ];

@@ -4,7 +4,7 @@ export const projects = [
     title: "Nexus: Analytics Command Center",
     company: "Pearson Online Learning Services",
     description:
-      "Built from the ground up to solve our data bottleneck, Nexus transformed how we handled marketing analytics. By connecting React and Node.js with BigQuery, we turned a multi-day reporting marathon into a streamlined process that took hours. The platform now actively monitors over $25M in marketing investments, giving teams instant access to their KPIs and enabling rapid, data-driven campaign adjustments.",
+      "Engineered Nexus to eliminate data bottlenecks and transform the way our teams approached marketing analytics. By integrating React, Node.js, and BigQuery, we reduced multi-day reporting cycles to just hours. The platform actively tracks over $25M in marketing and ad spend, delivering real-time KPI visibility, campaign performance insights, and enabling faster, more informed decision-making across departments.",
     technologies: [
       "React.js",
       "Node.js",
@@ -31,33 +31,33 @@ export const projects = [
       "Provided an efficient way for developers to leverage AI in coding workflows, reducing debugging time and increasing productivity.",
     repo: "https://github.com/DanSias/well-prompted",
   },
-  {
-    title: "SparkStack: Full-Stack Boilerplate",
-    company: "Personal Project",
-    description:
-      "Built a highly configurable boilerplate to streamline full-stack web application development, featuring authentication, database integration, and best practices for modern web projects.",
-    technologies: [
-      "React.js",
-      "Node.js",
-      "Express",
-      "TypeScript",
-      "Supabase",
-      "Prisma",
-      "TailwindCSS",
-    ],
-    challenges:
-      "Designing a flexible, scalable architecture that balances performance, maintainability, and ease of use for developers.",
-    impact:
-      "Accelerated project setup time for developers, enabling rapid prototyping and reducing boilerplate overhead.",
-    repo: "https://github.com/DanSias/fullstack-boilerplate",
-  },
+  // {
+  //   title: "SparkStack: Full-Stack Boilerplate",
+  //   company: "Personal Project",
+  //   description:
+  //     "Built a highly configurable boilerplate to streamline full-stack web application development, featuring authentication, database integration, and best practices for modern web projects.",
+  //   technologies: [
+  //     "React.js",
+  //     "Node.js",
+  //     "Express",
+  //     "TypeScript",
+  //     "Supabase",
+  //     "Prisma",
+  //     "TailwindCSS",
+  //   ],
+  //   challenges:
+  //     "Designing a flexible, scalable architecture that balances performance, maintainability, and ease of use for developers.",
+  //   impact:
+  //     "Accelerated project setup time for developers, enabling rapid prototyping and reducing boilerplate overhead.",
+  //   repo: "https://github.com/DanSias/fullstack-boilerplate",
+  // },
 
   // 📊 Data-Driven Marketing & Business Intelligence Projects
   {
     title: "Executive Insights Dashboard",
     company: "Pearson Online Learning Services",
     description:
-      'What started as a request for "better visibility" evolved into leadership\'s daily compass for decision-making. This interactive dashboard brings together department performance, annual targets, and emerging challenges in one clear view. The real game-changer? Department heads can now spot issues and coordinate solutions directly through the platform, cutting through traditional communication barriers.',
+      "Originally built to improve visibility, this executive-facing dashboard evolved into a strategic command center for leadership. It consolidates department performance, annual goals, and emerging challenges into a single interactive view. Leaders can now identify risks, track campaign and business KPIs in real time, and collaborate across departments to resolve issues—streamlining communication and accelerating high-impact decisions.",
     technologies: [
       "React.js",
       "Node.js",
@@ -116,7 +116,7 @@ export const projects = [
     title: "Marketing Budget & Forecast Hub",
     company: "Pearson Online Learning Services",
     description:
-      "Tackled the chaos of spreadsheet-based planning by creating a centralized system that marketing teams actually enjoy using. This web-based platform streamlined our entire budget cycle - from initial forecasts to final approvals. Channel owners can now update projections, get sign-off, and collaborate with their teams all in one place, turning what was once a monthly headache into a smooth, continuous process.",
+      "Replaced fragmented, spreadsheet-heavy workflows with a centralized budgeting and forecasting platform built specifically for marketing and paid media teams. This web-based system streamlined the entire budget cycle while improving accuracy, transparency, and collaboration. Channel owners can now adjust forecasts, manage approvals, and coordinate spend strategies in one intuitive interface, turning a once chaotic process into a reliable operational rhythm.",
     technologies: [
       "React.js",
       "Node.js",
