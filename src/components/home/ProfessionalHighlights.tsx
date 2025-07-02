@@ -3,32 +3,32 @@ const ProfessionalHighlights: React.FC = () => {
     {
       title: "Advanced Analytics Platform",
       description:
-        "Led the development of a custom analytics dashboard that transformed our marketing reporting process. Using React and Node.js, we slashed reporting time from days to hours while tracking over $25M in marketing investments.",
+        "Led development of a custom analytics dashboard using React and Node.js, transforming marketing and ad reporting workflows. Reduced reporting time from days to hours while tracking over $25M in campaign spend and performance metrics.",
     },
     {
-      title: "Marketing Forecasting Automation",
+      title: "Marketing Budget Forecasting",
       description:
-        "Tackled our team's biggest pain point by replacing clunky spreadsheets with a streamlined budgeting system. This gave marketing teams back nearly three working days each month, previously lost to manual data entry.",
+        "Replaced complex spreadsheets with a dynamic budgeting and pacing system for marketing and paid media teams. Saved nearly three working days per month and improved forecast accuracy across departments.",
     },
     {
-      title: "API-Driven Automation",
+      title: "Ad & Marketing Automation",
       description:
-        "Connected our core business platforms - Salesforce, BigQuery, and various ad services - to create a single source of truth for marketing data. This enabled our team to monitor performance in real-time and generate reports automatically.",
+        "Integrated Salesforce, BigQuery, and ad platforms into a unified data pipeline, enabling real-time performance tracking, campaign attribution, and automated reporting. Improved visibility across teams and reduced reliance on fragmented spreadsheets.",
     },
     {
-      title: "Marketing Performance Tracker",
+      title: "Campaign Performance Tracker",
       description:
-        "Built an intuitive dashboard that helped our marketing team make data-driven decisions. This tool became central to improving campaign performance and running more effective A/B tests.",
+        "Built an interactive dashboard that helped marketing teams monitor campaign outcomes, refine A/B tests, and improve ROAS. The tool became central to running more efficient paid media campaigns.",
     },
     {
       title: "Full-Stack System Architecture",
       description:
-        "Designed and built scalable applications from the ground up, combining React frontends with Node.js backends and PostgreSQL databases. Each project focused on making our systems faster and more reliable.",
+        "Designed scalable web applications with React, Node.js, and PostgreSQL, emphasizing speed, reliability, and extensibility for high-volume data, analytics workloads, and real-time reporting use cases.",
     },
     {
       title: "Executive Leadership Dashboard",
       description:
-        "Created a comprehensive view of business performance that became our executives' go-to resource for tracking department metrics, analyzing trends, and making strategic decisions.",
+        "Delivered a high-level analytics interface for executives to track marketing, ad, and operational KPIs. Empowered faster strategic decisions with real-time trend analysis and department-level insights.",
     },
   ];
 
@@ -46,10 +46,10 @@ const ProfessionalHighlights: React.FC = () => {
           <div
             key={index}
             className="p-6 bg-white dark:bg-slate-900 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white leading-snug">
               {highlight.title}
             </h3>
-            <p className="text-gray-700 dark:text-gray-300 mt-2">
+            <p className="mt-2 text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed">
               {highlight.description}
             </p>
           </div>
