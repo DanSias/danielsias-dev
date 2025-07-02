@@ -70,6 +70,12 @@ const Resume: React.FC = () => {
             Automation • Data Engineering • Business Intelligence • AI-Powered
             Tools
           </p>
+
+          <p>
+            <span className="font-semibold">Marketing & Ads:</span> Salesforce
+            Marketing Cloud • Google Ads • Meta Ads • Voluum • Campaign Tracking
+            • Budget Pacing
+          </p>
           <p>
             <span className="font-semibold">Tools & Workflow:</span> Git •
             Agile/Scrum • API Design • Performance Optimization • Automation
