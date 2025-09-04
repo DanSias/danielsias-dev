@@ -1,0 +1,238 @@
+/* ==========================================================================
+   RocketGate Embedded Fields – Demo Overrides
+   - Scope most rules under #contentWrapper (RG wrapper) to avoid leaking
+   - Keep it pure CSS (no @import), no fonts from external sites
+   - Safe for Hosted Pages / Embedded Fields
+   ========================================================================== */
+
+/* ---- “Design tokens” (tweak these to rebrand quickly) ------------------- */
+:root {
+  --rg-font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+                    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+                    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --rg-text:        #0f172a;  /* slate-900 */
+  --rg-subtle:      #475569;  /* slate-600 */
+  --rg-muted:       #64748b;  /* slate-500 */
+  --rg-border:      #cbd5e1;  /* slate-300 */
+  --rg-ring:        #6366f1;  /* indigo-500 */
+  --rg-bg:          #ffffff;
+  --rg-chip:        #f8fafc;  /* slate-50 */
+  --rg-tab:         #f1f5f9;  /* slate-100 */
+  --rg-tab-active:  #e2e8f0;  /* slate-200 */
+  --rg-danger:      #ef4444;  /* red-500 */
+  --rg-success:     #16a34a;  /* green-600 */
+}
+
+/* ---- Base / wrapper ----------------------------------------------------- */
+#contentWrapper,
+#frameWrapper,
+#formWrapper {
+  font-family: var(--rg-font-family);
+  color: var(--rg-text);
+  background: transparent; /* let merchant page color show through */
+}
+
+#formWrapper {
+  /* mimic a card look without heavy chrome */
+  background: var(--rg-bg);
+  border: 1px solid var(--rg-border);
+  border-radius: 0.75rem;    /* rounded-xl */
+  padding: 1rem;
+}
+
+/* ---- Labels stacked over inputs ---------------------------------------- */
+#formWrapper label {
+  display: block;
+  font-size: 0.875rem;       /* text-sm */
+  font-weight: 500;          /* medium */
+  color: var(--rg-subtle);
+  margin-bottom: 0.25rem;    /* tight gap */
+}
+
+/* Some templates use inline labels—force block layout where possible */
+#formWrapper .inlineLabel {
+  display: block !important;
+}
+
+/* ---- Inputs / selects / textareas -------------------------------------- */
+#formWrapper input[type="text"],
+#formWrapper input[type="email"],
+#formWrapper input[type="tel"],
+#formWrapper input[type="number"],
+#formWrapper input[type="password"],
+#formWrapper select,
+#formWrapper textarea,
+#cardData input,               /* if inner inputs are exposed */
+#cardData select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--rg-border);
+  border-radius: 0.5rem;      /* rounded-md */
+  background: #fff;
+  color: var(--rg-text);
+  padding: 0.5rem 0.75rem;    /* px-3 py-2 */
+  line-height: 1.45;
+  appearance: none;
+  outline: none;
+}
+
+#formWrapper input::placeholder,
+#formWrapper textarea::placeholder {
+  color: var(--rg-muted);
+}
+
+/* Focus ring */
+#formWrapper input:focus,
+#formWrapper select:focus,
+#formWrapper textarea:focus {
+  border-color: var(--rg-ring);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--rg-ring) 20%, transparent);
+}
+
+/* Spacing between stacked controls */
+#formWrapper .formRow,
+#formWrapper .fieldRow,
+#formWrapper .row,
+#cardData > div {
+  margin-bottom: 0.75rem;
+}
+
+/* ---- Tabs (Card / Google Pay / etc.) ----------------------------------- */
+#paymentMethodWrapper {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tabPaymentMethod {
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid var(--rg-border);
+  background: var(--rg-tab);
+  color: var(--rg-text);
+  padding: 0.375rem 0.75rem;  /* py-1.5 px-3 */
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.tabPaymentMethod:hover {
+  background: var(--rg-tab-active);
+}
+
+.tabPaymentMethod.active {
+  background: var(--rg-bg);
+  border-color: var(--rg-ring);
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--rg-ring) 30%, transparent);
+}
+
+/* If these IDs exist, ensure only the active tab’s content is visible */
+#cardDataTab,
+#googlePayDataTab,
+#pixDataTab {
+  display: none;
+}
+#cardDataTab.active,
+#googlePayDataTab.active,
+#pixDataTab.active {
+  display: block;
+}
+
+/* ---- Card area container ------------------------------------------------ */
+#cardData {
+  /* Style the container to look like a native input */
+  border: 1px solid var(--rg-border);
+  border-radius: 0.5rem;
+  background: #fff;
+  padding: 0.5rem 0.75rem;
+  min-height: 44px; /* ensure a tap target on mobile */
+  display: flex;
+  align-items: center;
+}
+
+/* If RocketGate injects multiple inner fields, add some breathing room */
+#cardData > * + * {
+  margin-left: 0.5rem;
+}
+
+/* ---- Email / Remember me (RocketPay) ----------------------------------- */
+#formWrapper .rememberMe,
+#formWrapper .rocketpay-remember,
+#formWrapper .remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--rg-subtle);
+  font-size: 0.875rem;
+}
+
+#formWrapper input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--rg-border);
+  border-radius: 0.25rem;
+}
+
+/* ---- Buttons ------------------------------------------------------------ */
+#formWrapper .btn,
+#formWrapper input[type="submit"],
+#formWrapper button[type="submit"] {
+  background: var(--rg-ring);
+  color: #fff;
+  border: 1px solid var(--rg-ring);
+  border-radius: 0.75rem;     /* rounded-xl */
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#formWrapper .btn:hover,
+#formWrapper input[type="submit"]:hover,
+#formWrapper button[type="submit"]:hover {
+  filter: brightness(0.95);
+}
+
+/* ---- Messages / errors -------------------------------------------------- */
+#formWrapper .error,
+#formWrapper .validationError,
+#formWrapper .rg-error {
+  color: #fff;
+  background: var(--rg-danger);
+  border: 1px solid color-mix(in oklab, var(--rg-danger) 90%, black 10%);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem 0;
+}
+
+#formWrapper .success,
+#formWrapper .rg-success {
+  color: #fff;
+  background: var(--rg-success);
+  border: 1px solid color-mix(in oklab, var(--rg-success) 90%, black 10%);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem 0;
+}
+
+/* ---- Responsive tweaks -------------------------------------------------- */
+@media (max-width: 480px) {
+  #paymentMethodWrapper {
+    flex-wrap: wrap;
+  }
+  .tabPaymentMethod {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+/* ---- Optional RTL support (set dir=rtl server-side if needed) ---------- */
+[dir="rtl"] #formWrapper {
+  direction: rtl;
+}
+[dir="rtl"] #formWrapper label {
+  text-align: right;
+}
+[dir="rtl"] #cardData > * + * {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
