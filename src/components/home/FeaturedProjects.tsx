@@ -19,6 +19,11 @@ import {
   SiPrisma,
   SiTypescript,
   SiExpress,
+  SiLaravel,
+  SiVuedotjs,
+  SiMysql,
+  SiJira,
+  SiGitlab,
 } from "react-icons/si";
 
 import { ReactElement } from "react";
@@ -39,27 +44,34 @@ const techIcons: Record<string, ReactElement> = {
   "Chart.js": <FaRegChartBar />,
   "Google Cloud Functions": <SiGooglecloud />,
   "Google Sheets API": <SiGooglesheets />,
+  Laravel: <SiLaravel />,
+  "Vue.js": <SiVuedotjs />,
+  MySQL: <SiMysql />,
+  Jira: <SiJira />,
+  GitLab: <SiGitlab />,
 };
 
 const FeaturedProjects: React.FC = () => {
   return (
-    <section className="max-w-7xl mx-auto px-8 py-12">
-      <h2 className="text-3xl font-bold text-primary text-center">
-        Featured Projects
-      </h2>
-      <p className="text-lg text-gray-600 dark:text-gray-300 mt-2 text-center">
-        A few of my most impactful projects.
+    <section className="max-w-6xl mx-auto">
+      <h2 className="text-heading">More Projects</h2>
+      <p className="text-subhead">
+        Full-stack architecture and AI-assisted tooling, beyond the flagship
+        above.
       </p>
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 max-w-3xl mx-auto gap-6">
         {featuredProjects.map((project) => (
           <div
             key={project.title}
-            className="p-6 bg-white dark:bg-slate-900 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 flex flex-col h-full">
+            className="p-6 bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-700 flex flex-col h-full">
             <div className="flex-grow mb-4">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                 {project.title}
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mt-2">
+              <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
+                {project.company}
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm leading-relaxed">
                 {project.description}
               </p>
             </div>

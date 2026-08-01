@@ -20,13 +20,8 @@ const FinalCTA: React.FC = () => {
           href="https://www.linkedin.com/in/daniel-sias"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-3 bg-gray-200 dark:bg-gray-800 dark:text-white text-gray-800 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-700 transition">
+          className="px-6 py-3 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition">
           Connect on LinkedIn
-        </Link>
-        <Link
-          href="/resume"
-          className="px-6 py-3 bg-gray-700 text-white rounded-lg font-semibold hover:bg-gray-800 transition">
-          📄 View Resume
         </Link>
       </div>
     </section>

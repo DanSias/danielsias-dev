@@ -1,10 +1,30 @@
 export const projects = [
   // 🚀 High-Impact Full-Stack & AI-Powered Tools
   {
+    title: "Workflow Intelligence",
+    company: "RocketGate",
+    description:
+      "An engineering workflow and project-tracking platform giving development teams visibility into work items, stage transitions, and delivery progress. Built with Laravel and Vue to replace scattered status updates with a single source of truth for how work moves through the pipeline, using AI-assisted development to move from prototype to production quickly.",
+    technologies: [
+      "Laravel",
+      "Vue.js",
+      "TypeScript",
+      "TailwindCSS",
+      "MySQL",
+      "Jira",
+      "GitLab",
+    ],
+    challenges:
+      "Designing a data model and UI that stay accurate as work items move through Jira and GitLab without becoming another manual status tool.",
+    impact:
+      "Gave engineering leadership real-time visibility into stage history and delivery progress, reducing time spent manually compiling status updates.",
+    repo: null,
+  },
+  {
     title: "Nexus: Analytics Command Center",
     company: "Pearson Online Learning Services",
     description:
-      "Engineered Nexus to eliminate data bottlenecks and transform the way our teams approached marketing analytics. By integrating React, Node.js, and BigQuery, we reduced multi-day reporting cycles to just hours. The platform actively tracks over $25M in marketing and ad spend, delivering real-time KPI visibility, campaign performance insights, and enabling faster, more informed decision-making across departments.",
+      "A full-stack analytics platform built with React, Node.js, and BigQuery to unify marketing, CRM, and ad-platform data behind a single API layer. Replaced multi-day manual reporting cycles with real-time dashboards, handling $25M+ in tracked spend across departments.",
     technologies: [
       "React.js",
       "Node.js",
@@ -30,6 +50,7 @@ export const projects = [
     impact:
       "Provided an efficient way for developers to leverage AI in coding workflows, reducing debugging time and increasing productivity.",
     repo: "https://github.com/DanSias/well-prompted",
+    featured: true,
   },
   // {
   //   title: "SparkStack: Full-Stack Boilerplate",
@@ -71,7 +92,6 @@ export const projects = [
     impact:
       "Provided executive leadership with a centralized source for monitoring performance, improving communication, and aligning departments with strategic goals.",
     repo: null,
-    featured: true,
   },
   {
     title: "Email Marketing Performance Tracker",
@@ -130,7 +150,6 @@ export const projects = [
     impact:
       "Streamlined forecasting, improved collaboration between marketing and leadership, and enhanced financial planning transparency, reducing manual errors and approval delays.",
     repo: null,
-    featured: true,
   },
 
   // 🔄 Infrastructure, API Integrations & Automation
