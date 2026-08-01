@@ -3,21 +3,22 @@ import PageOutro from "@/components/home/PageOutro";
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="min-h-screen  pt-32">
-      <div className="container mx-auto px-4">
-        <h1 className="text-heading">About Me</h1>
+    <main className="pt-32 px-6 pb-16">
+      <div className="max-w-5xl mx-auto">
+        <h1 className="text-heading">How I Think</h1>
         <p className="text-subhead">
-          A little insight into who I am, what drives me, and what I love
-          working on.
+          The thought that keeps showing up in almost everything I build.
         </p>
-        <hr className="my-16 dark:border-sky-900 max-w-4xl mx-auto" />
 
-        <AboutMe />
-        <hr className="my-16 dark:border-sky-900 max-w-4xl mx-auto" />
+        <div className="pb-12">
+          <AboutMe />
+        </div>
 
-        <PageOutro />
+        <div className="border-t border-slate-200 dark:border-slate-800">
+          <PageOutro />
+        </div>
       </div>
-    </div>
+    </main>
   );
 };
 

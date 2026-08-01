@@ -1,75 +1,54 @@
-import PageOutro from "@/components/home/PageOutro";
 import { projects } from "@/constants/projects";
+import ProjectHero from "./ProjectHero";
+import ThemeSection from "./ThemeSection";
+import PageOutro from "@/components/home/PageOutro";
 
 export default function ProjectsPage() {
+  const aiTooling = projects.filter((p) => p.theme === "ai-tooling");
+  const analytics = projects.filter((p) => p.theme === "analytics");
+  const infrastructure = projects.filter((p) => p.theme === "infrastructure");
+
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen px-6 pt-32">
-      <div className="max-w-5xl w-full">
-        {/* Page Heading */}
-        <h1 className="text-4xl font-bold text-center text-slate-800 dark:text-slate-200">
-          Projects
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300 text-center mt-2">
-          A collection of my work, showcasing technical problem-solving and
-          business impact.
+    <main className="pt-32 px-6 pb-16">
+      <div className="max-w-5xl mx-auto">
+        <h1 className="text-heading">Engineering Projects</h1>
+        <p className="text-subhead">
+          How I approach engineering problems: from a flagship platform to
+          the tools and systems built along the way.
         </p>
 
-        {/* Projects Grid */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project) => (
-            <div
-              key={project.title}
-              className="p-6 bg-white dark:bg-slate-900 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
-              {/* Project Title */}
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
-                {project.title}
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 text-sm">
-                {project.company}
-              </p>
+        <section className="pt-4">
+          <ProjectHero />
+        </section>
 
-              {/* Description */}
-              <p className="text-gray-700 dark:text-gray-300 mt-2">
-                {project.description}
-              </p>
+        <section className="py-12 border-t border-slate-200 dark:border-slate-800">
+          <ThemeSection
+            title="AI-Assisted Developer Tools"
+            intro="Personal tools exploring how AI fits into a real development workflow, building the tooling around it, not just using it."
+            projects={aiTooling}
+          />
+        </section>
 
-              {/* Technologies */}
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                <strong>Technologies:</strong>{" "}
-                {project.technologies.join(" • ")}
-              </p>
+        <section className="py-12 border-t border-slate-200 dark:border-slate-800">
+          <ThemeSection
+            title="Analytics & Reporting Platforms"
+            intro="Turning fragmented data across CRM, ad, and analytics platforms into systems people actually check."
+            projects={analytics}
+          />
+        </section>
 
-              {/* Challenges */}
-              {project.challenges && (
-                <p className="text-sm text-yellow-600 dark:text-yellow-200 mt-2">
-                  <strong>Challenges:</strong> {project.challenges}
-                </p>
-              )}
+        <section className="py-12 border-t border-slate-200 dark:border-slate-800">
+          <ThemeSection
+            title="Operations, Automation & Data Infrastructure"
+            intro="The less visible engineering work: migrations, integrations, and automation that keep other systems running."
+            projects={infrastructure}
+          />
+        </section>
 
-              {/* Impact */}
-              {project.impact && (
-                <p className="text-sm text-green-600 dark:text-green-200 mt-2">
-                  <strong>Impact:</strong> {project.impact}
-                </p>
-              )}
-
-              {/* Repository Link */}
-              {project.repo && (
-                <div className="mt-4">
-                  <a
-                    href={project.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
-                    View Repository
-                  </a>
-                </div>
-              )}
-            </div>
-          ))}
+        <div className="border-t border-slate-200 dark:border-slate-800">
+          <PageOutro />
         </div>
       </div>
-      <PageOutro />
-    </section>
+    </main>
   );
 }

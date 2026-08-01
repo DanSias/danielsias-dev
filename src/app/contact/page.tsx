@@ -1,68 +1,63 @@
-import ContactButtons from "./ContactButtons";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { contactInfo } from "@/constants/contact";
 
 export default function ContactPage() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen px-4">
-      <div className="max-w-2xl w-full p-8 ">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-sky-100 text-center">
-          Contact Me
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-sky-200 text-center mt-2">
-          Let&apos;s connect! Feel free to reach out via email or find me online
+    <main className="pt-32 px-6 pb-16">
+      <div className="max-w-xl mx-auto text-center">
+        <h1 className="text-heading">Have a Problem Worth Solving?</h1>
+        <p className="text-subhead">The kinds of conversations I enjoy most.</p>
+
+        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+          Developer tooling, internal platforms, AI-assisted engineering,
+          payment systems, workflow automation, and especially the
+          operational problems that never quite make it to the top of
+          anyone&apos;s roadmap.
         </p>
 
-        <ContactButtons />
-        {/* <hr className="my-16 dark:border-sky-900" /> */}
+        <div className="mt-8">
+          <a
+            href={`mailto:${contactInfo.email}`}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
+            <FaEnvelope />
+            Email Me
+          </a>
+        </div>
 
-        {/* <h1 className="text-3xl mt-12 font-bold text-gray-900 dark:text-sky-100 text-center">
-          Send A Message
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-sky-200 text-center mt-2">
-          Use the form below to message me directly.
-        </p> */}
-        {/* Contact Form */}
-        {/* <form className="mt-6 flex flex-col gap-4">
-          <div>
-            <label className="block text-gray-700 dark:text-sky-100 font-medium">
-              Name
-            </label>
-            <input
-              type="text"
-              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Your Name"
-              required
-            />
-          </div>
+        <div className="mt-4 flex justify-center gap-6">
+          <a
+            href={contactInfo.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-sky-400 transition">
+            <FaGithub />
+            GitHub
+          </a>
+          <a
+            href={contactInfo.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-sky-400 transition">
+            <FaLinkedin />
+            LinkedIn
+          </a>
+        </div>
 
-          <div>
-            <label className="block text-gray-700 dark:text-sky-100 font-medium">
-              Email
-            </label>
-            <input
-              type="email"
-              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Your Email"
-              required
-            />
-          </div>
+        <p className="mt-6 text-sm text-gray-400 dark:text-gray-500">
+          Florida (Remote) · Eastern Time · Usually replies within a day or
+          two
+        </p>
 
-          <div>
-            <label className="block text-gray-700 dark:text-sky-100 font-medium">
-              Message
-            </label>
-            <textarea
-              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Your Message"
-              rows={4}
-              required></textarea>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-700 transition">
-            Send Message
-          </button>
-        </form> */}
+        <div className="mt-16 pt-10 border-t border-slate-200 dark:border-slate-800">
+          <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-pretty">
+            Most of what&apos;s on this site started with the same thought:{" "}
+            <span className="font-medium text-gray-700 dark:text-gray-200">
+              this should be easier.
+            </span>{" "}
+            If you&apos;re working on something that feels harder than it
+            should, I&apos;d like to hear about it.
+          </p>
+        </div>
       </div>
     </main>
   );

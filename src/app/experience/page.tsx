@@ -1,32 +1,33 @@
-import PearsonEngineer from "./pearson-engineer";
-import PearsonSeo from "./pearson-seo";
-import LiquidGravityExperience from "./liquid-gravity";
+import RocketGate from "./RocketGate";
+import Pearson from "./Pearson";
+import LiquidGravity from "./LiquidGravity";
 import PageOutro from "@/components/home/PageOutro";
-// import degrees from "@/constants/education";
 
 export default function ExperiencePage() {
   return (
-    <main className="flex flex-col items-center justify-center pt-36 px-4">
-      <div className="max-w-4xl w-full">
-        <h1 className="text-4xl font-bold text-center text-slate-900 dark:text-slate-200">
-          Professional Experience
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-sky-200 text-center mt-2">
-          Solving problems, streamlining processes, and making technology work
-          smarter.
+    <main className="pt-32 px-6 pb-16">
+      <div className="max-w-5xl mx-auto">
+        <h1 className="text-heading">Engineering Experience</h1>
+        <p className="text-subhead">
+          Case studies from each role: the systems I built, the technologies
+          I used, and the impact they had.
         </p>
-        <hr className="my-16 dark:border-sky-900" />
 
-        <PearsonEngineer />
-        <hr className="my-16 dark:border-sky-900" />
+        <section className="pt-4">
+          <RocketGate />
+        </section>
 
-        <PearsonSeo />
-        <hr className="my-16 dark:border-sky-900" />
+        <section className="py-12 border-t border-slate-200 dark:border-slate-800">
+          <Pearson />
+        </section>
 
-        <LiquidGravityExperience />
-        <hr className="my-16 dark:border-sky-900" />
+        <section className="py-12 border-t border-slate-200 dark:border-slate-800">
+          <LiquidGravity />
+        </section>
 
-        <PageOutro />
+        <div className="border-t border-slate-200 dark:border-slate-800">
+          <PageOutro />
+        </div>
       </div>
     </main>
   );

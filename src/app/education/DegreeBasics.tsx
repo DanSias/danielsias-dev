@@ -5,10 +5,10 @@ import degrees from "@/constants/education"; // Import the array directly
 const EducationRow: React.FC = () => {
   return (
     <section className="max-w-6xl mx-auto">
-      <h2 className="text-heading">Education & Academic Background</h2>
+      <h2 className="text-heading">Engineering Foundations</h2>
       <p className="text-subhead">
-        Bridging science, engineering, and management to drive innovative
-        software solutions.
+        Physics, optics, and management shaped how I approach systems, data,
+        and software.
       </p>
       <div className="flex justify-center">
         <div className="max-w-6xl w-full flex flex-row justify-center items-start gap-6">
@@ -45,7 +45,7 @@ const EducationRow: React.FC = () => {
         <Link
           href="/education"
           className="text-blue-600 dark:text-sky-400 font-semibold hover:underline">
-          View Education →
+          View Foundations →
         </Link>
       </div>
     </section>

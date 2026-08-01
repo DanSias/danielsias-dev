@@ -22,7 +22,7 @@ const HeroSection: React.FC = () => {
               <span className="font-semibold text-gray-900 dark:text-white">
                 Developer Tooling
               </span>{" "}
-              — Internal software for engineering and support teams
+              : Internal software for engineering and support teams
             </span>
           </li>
           <li className="flex gap-3">
@@ -33,7 +33,7 @@ const HeroSection: React.FC = () => {
               <span className="font-semibold text-gray-900 dark:text-white">
                 Payment Systems
               </span>{" "}
-              — Merchant integrations and API design
+              : Merchant integrations and API design
             </span>
           </li>
           <li className="flex gap-3">
@@ -44,7 +44,7 @@ const HeroSection: React.FC = () => {
               <span className="font-semibold text-gray-900 dark:text-white">
                 AI-Assisted Development
               </span>{" "}
-              — From prototype to production
+              : From prototype to production
             </span>
           </li>
           <li className="flex gap-3">
@@ -55,7 +55,7 @@ const HeroSection: React.FC = () => {
               <span className="font-semibold text-gray-900 dark:text-white">
                 Workflow Automation
               </span>{" "}
-              — Replacing manual, repetitive processes
+              : Replacing manual, repetitive processes
             </span>
           </li>
         </ul>

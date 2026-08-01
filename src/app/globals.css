@@ -23,26 +23,18 @@ body {
 }
 
 html {
-  @apply bg-slate-100  text-slate-900 dark:bg-slate-900 dark:text-slate-100;
+  @apply bg-slate-100 text-slate-900;
+}
+html.dark {
+  @apply bg-slate-900 text-slate-100;
 }
 
 .header-link {
-  @apply text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-slate-50 transition transition-colors;
+  @apply text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-slate-50 transition-colors rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500;
 }
 
 .mobile-link {
-  @apply text-slate-700 dark:text-sky-100 hover:text-blue-600 transition-colors py-2 w-full text-center;
-}
-
-.card {
-  @apply bg-white dark:bg-slate-700 max-w-4xl mx-auto p-6 shadow-lg rounded-2xl;
-}
-
-.card-text {
-  @apply text-slate-700 dark:text-sky-100 leading-relaxed mb-6;
-}
-.card-subhead {
-  @apply text-2xl font-semibold text-blue-600 dark:text-sky-200 mt-6 mb-3;
+  @apply text-slate-700 dark:text-sky-100 hover:text-blue-600 transition-colors py-2 w-full text-center rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500;
 }
 
 .text-primary {
@@ -54,12 +46,4 @@ html {
 }
 .text-subhead {
   @apply text-lg text-center text-gray-700 dark:text-gray-300 mt-2 mb-12;
-}
-
-.paragraph {
-  @apply text-lg text-gray-700 dark:text-slate-200 leading-relaxed mb-4;
-}
-
-.about-subhead {
-  @apply text-2xl text-gray-700 dark:text-slate-200 font-semibold mt-8 mb-4 text-center;
 }

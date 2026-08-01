@@ -14,7 +14,7 @@ const projects = [
   {
     title: "PromptWorks",
     description:
-      "An AI prompt-generation tool built with React and Node to help teams structure clear, reusable prompts — from technical documentation to content workflows.",
+      "An AI prompt-generation tool built with React and Node to help teams structure clear, reusable prompts: from technical documentation to content workflows.",
     liveDemo: "https://promptworks.danielsias.dev",
     github: "https://github.com/DanSias/prompt-works",
     image: "/images/promptworks-screenshot.png",
@@ -30,7 +30,7 @@ const projects = [
   {
     title: "Well Applied",
     description:
-      "An AI assistant that generates tailored prompts for job applications and interview prep — an exploration of structured prompt design outside of developer tooling.",
+      "An AI assistant that generates tailored prompts for job applications and interview prep: an exploration of structured prompt design outside of developer tooling.",
     liveDemo: "https://wellapplied.danielsias.dev",
     github: "https://github.com/DanSias/well-applied",
     image: "/images/wellapplied-screenshot.png",
@@ -73,7 +73,7 @@ const LiveProjects = () => {
             {flagship.description}
           </p>
           <p className="mt-4 text-sm text-gray-500 dark:text-gray-500 italic">
-            Private/internal application — no public demo available.
+            Private/internal application. No public demo available.
           </p>
           <Link
             href="/projects"

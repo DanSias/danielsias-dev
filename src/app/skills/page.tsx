@@ -1,22 +1,34 @@
-import SkillsList from "@/components/SkillsList";
-import Technologieslist from "@/components/TechnologiesList";
+import { capabilities } from "@/constants/skills";
+import CapabilityCard from "./CapabilityCard";
 import PageOutro from "@/components/home/PageOutro";
 
-const SkillsPage: React.FC = () => {
+export default function SkillsPage() {
   return (
-    <div className="max-w-6xl mx-auto pt-36 px-4">
-      <h1 className="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-sky-100">
-        My Skills
-      </h1>
-      <p className="text-lg text-gray-700 dark:text-gray-300 text-center mb-8">
-        A collection of the technologies, tools, and methodologies I specialize
-        in.
-      </p>
-      <SkillsList />
-      <Technologieslist />
-      <PageOutro />
-    </div>
-  );
-};
+    <main className="pt-32 px-6 pb-16">
+      <div className="max-w-5xl mx-auto">
+        <h1 className="text-heading">Engineering Capabilities</h1>
+        <p className="text-subhead">
+          What I build with, where I&apos;ve applied it, and the kinds of
+          problems it solves.
+        </p>
 
-export default SkillsPage;
+        <p className="max-w-2xl mx-auto mb-10 text-center text-sm sm:text-base font-medium text-gray-500 dark:text-gray-400">
+          I&apos;m most interested in the systems that don&apos;t get
+          noticed: internal tools, workflow automation, and the
+          infrastructure that lets a team move faster without thinking about
+          it.
+        </p>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-12">
+          {capabilities.map((capability) => (
+            <CapabilityCard key={capability.title} capability={capability} />
+          ))}
+        </div>
+
+        <div className="border-t border-slate-200 dark:border-slate-800">
+          <PageOutro />
+        </div>
+      </div>
+    </main>
+  );
+}

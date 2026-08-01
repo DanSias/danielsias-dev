@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { projects } from "@/constants/projects";
 import * as Tooltip from "@radix-ui/react-tooltip";
-const featuredProjects = projects.filter((project) => project.featured);
+const featuredProjects = projects
+  .filter((project) => project.featured)
+  .sort((a, b) => Number(!!b.lead) - Number(!!a.lead));
 import {
   FaReact,
   FaNodeJs,
   FaDatabase,
-  FaServer,
   FaSalesforce,
   FaRegChartBar,
 } from "react-icons/fa";
@@ -30,22 +31,21 @@ import { ReactElement } from "react";
 
 // Map technology names to icons
 const techIcons: Record<string, ReactElement> = {
-  "React.js": <FaReact />,
+  React: <FaReact />,
   "Node.js": <FaNodeJs />,
   PostgreSQL: <FaDatabase />,
-  "Express.js": <FaServer />,
   BigQuery: <SiGooglebigquery />,
   Salesforce: <FaSalesforce />,
   Supabase: <SiSupabase />,
-  TailwindCSS: <SiTailwindcss />,
+  "Tailwind CSS": <SiTailwindcss />,
   Prisma: <SiPrisma />,
   TypeScript: <SiTypescript />,
-  Express: <SiExpress />,
+  "Express.js": <SiExpress />,
   "Chart.js": <FaRegChartBar />,
   "Google Cloud Functions": <SiGooglecloud />,
   "Google Sheets API": <SiGooglesheets />,
   Laravel: <SiLaravel />,
-  "Vue.js": <SiVuedotjs />,
+  Vue: <SiVuedotjs />,
   MySQL: <SiMysql />,
   Jira: <SiJira />,
   GitLab: <SiGitlab />,

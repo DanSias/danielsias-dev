@@ -1,20 +1,25 @@
 import EducationCard from "./DegreeDetails";
 import degrees from "@/constants/education";
+import PageOutro from "@/components/home/PageOutro";
 
 export default function EducationPage() {
   return (
-    <main className="flex flex-col items-center justify-center pt-36 px-4">
-      <div className="max-w-4xl w-full">
-        <h1 className="text-heading">Education</h1>
+    <main className="pt-32 px-6 pb-16">
+      <div className="max-w-5xl mx-auto">
+        <h1 className="text-heading">Engineering Foundations</h1>
         <p className="text-subhead">
-          A summary of my academic background and key takeaways from each
-          program.
+          My background in physics, optics, and management still shapes how
+          I approach systems, data, and software today.
         </p>
 
-        <div className="mt-4 flex flex-col gap-6">
-          {degrees.map((degree, index) => (
-            <EducationCard key={index} degree={degree} />
+        <div className="flex flex-col gap-6 pb-12">
+          {degrees.map((degree) => (
+            <EducationCard key={degree.school} degree={degree} />
           ))}
+        </div>
+
+        <div className="border-t border-slate-200 dark:border-slate-800">
+          <PageOutro />
         </div>
       </div>
     </main>

@@ -22,7 +22,9 @@ export default function HomePage() {
       </section>
 
       {/* Selected Work */}
-      <section className="py-16 border-t border-slate-200 dark:border-slate-800">
+      <section
+        id="selected-work"
+        className="py-16 border-t border-slate-200 dark:border-slate-800 scroll-mt-24">
         <LiveProjects />
       </section>
 

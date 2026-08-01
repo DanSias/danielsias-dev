@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaEnvelope, FaFilePdf } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
@@ -43,8 +43,7 @@ const Footer: React.FC = () => {
             <li>
               <Link
                 href="/resume"
-                className="flex items-center text-secondary hover:text-accent">
-                <FaFilePdf className="text-red-500 dark:text-red-300 mr-2" />
+                className="text-secondary hover:text-accent">
                 Resume
               </Link>
             </li>

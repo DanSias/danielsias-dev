@@ -30,33 +30,35 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-50 dark:bg-slate-900`}>
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system">
-          <Header />
+          <div className="min-h-dvh flex flex-col bg-slate-50 dark:bg-slate-900">
+            <Header />
 
-          {/* Background Blur Elements */}
-          <Image
-            alt=""
-            width="530"
-            height="530"
-            decoding="async"
-            data-nimg="1"
-            className="hidden dark:xl:block absolute left-[-50px] md:left-8 top-4 opacity-50 blur-2xl"
-            src="/blur-cyan.png"
-            title=""
-          />
-          <Image
-            alt=""
-            width="567"
-            height="567"
-            decoding="async"
-            data-nimg="1"
-            className="hidden dark:xl:block absolute right-[-40px] md:right-8 top-24 opacity-50 blur-2xl"
-            src="/blur-indigo.png"
-            title=""
-          />
-          {children}
-          <Footer />
+            {/* Background Blur Elements */}
+            <Image
+              alt=""
+              width="530"
+              height="530"
+              decoding="async"
+              data-nimg="1"
+              className="hidden dark:xl:block absolute left-[-50px] md:left-8 top-4 opacity-50 blur-2xl"
+              src="/blur-cyan.png"
+              title=""
+            />
+            <Image
+              alt=""
+              width="567"
+              height="567"
+              decoding="async"
+              data-nimg="1"
+              className="hidden dark:xl:block absolute right-[-40px] md:right-8 top-24 opacity-50 blur-2xl"
+              src="/blur-indigo.png"
+              title=""
+            />
+            <div className="flex-1">{children}</div>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

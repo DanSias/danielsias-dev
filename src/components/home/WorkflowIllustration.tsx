@@ -1,5 +1,5 @@
 /**
- * Abstract, conceptual illustration of a workflow/kanban pipeline —
+ * Abstract, conceptual illustration of a workflow/kanban pipeline,
  * standing in for a Workflow Intelligence screenshot until a sanitized
  * one is available. Intentionally not a mock of any real UI.
  */

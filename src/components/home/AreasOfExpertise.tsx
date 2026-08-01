@@ -4,7 +4,7 @@ const focusAreas = [
   {
     title: "Payment Platform Engineering",
     description:
-      "Full-stack engineering on payment infrastructure at RocketGate — merchant integrations, transaction reconstruction tooling, and the internal software behind payment platform operations.",
+      "Full-stack engineering on payment infrastructure at RocketGate: merchant integrations, transaction reconstruction tooling, and the internal software behind payment platform operations.",
     icon: FaCreditCard,
   },
   {
@@ -36,7 +36,7 @@ const AreasOfExpertise: React.FC = () => {
             <h3 className="mt-4 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
               {area.title}
             </h3>
-            <p className="mt-2 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+            <p className="mt-2 text-gray-500 dark:text-gray-400 text-base leading-relaxed">
               {area.description}
             </p>
           </div>
