@@ -10,9 +10,8 @@ export default function ContactPage() {
 
         <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
           Developer tooling, internal platforms, AI-assisted engineering,
-          payment systems, workflow automation, and especially the
-          operational problems that never quite make it to the top of
-          anyone&apos;s roadmap.
+          payment systems, workflow automation, and especially the operational
+          problems that never quite make it to the top of anyone&apos;s roadmap.
         </p>
 
         <div className="mt-8">
@@ -44,8 +43,7 @@ export default function ContactPage() {
         </div>
 
         <p className="mt-6 text-sm text-gray-400 dark:text-gray-500">
-          Florida (Remote) · Eastern Time · Usually replies within a day or
-          two
+          Florida (Remote) · Eastern Time · Usually replies within a day or two
         </p>
 
         <div className="mt-16 pt-10 border-t border-slate-200 dark:border-slate-800">
@@ -54,8 +52,10 @@ export default function ContactPage() {
             <span className="font-medium text-gray-700 dark:text-gray-200">
               this should be easier.
             </span>{" "}
+            <br />
             If you&apos;re working on something that feels harder than it
-            should, I&apos;d like to hear about it.
+            should, <br />
+            I&apos;d like to hear about it.
           </p>
         </div>
       </div>
