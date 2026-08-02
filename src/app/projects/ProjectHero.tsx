@@ -49,7 +49,7 @@ const ProjectHero: React.FC = () => {
 
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-5">
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">
+              <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
                 Problem
               </h3>
               <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -59,7 +59,7 @@ const ProjectHero: React.FC = () => {
               </p>
             </div>
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">
+              <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
                 Approach
               </h3>
               <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -69,7 +69,7 @@ const ProjectHero: React.FC = () => {
               </p>
             </div>
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">
+              <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
                 Outcome
               </h3>
               <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">

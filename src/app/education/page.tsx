@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import EducationCard from "./DegreeDetails";
 import degrees from "@/constants/education";
 import PageOutro from "@/components/home/PageOutro";
+
+const title = "Engineering Foundations";
+const description =
+  "My background in physics, optics, and management still shapes how I approach systems, data, and software today.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/education" },
+  openGraph: { title, description, url: "/education" },
+  twitter: { title, description },
+};
 
 export default function EducationPage() {
   return (

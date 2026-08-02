@@ -1,5 +1,17 @@
+import type { Metadata } from "next";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { contactInfo } from "@/constants/contact";
+
+const title = "Have a Problem Worth Solving?";
+const description = "The kinds of conversations I enjoy most.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/contact" },
+  openGraph: { title, description, url: "/contact" },
+  twitter: { title, description },
+};
 
 export default function ContactPage() {
   return (
@@ -42,7 +54,7 @@ export default function ContactPage() {
           </a>
         </div>
 
-        <p className="mt-6 text-sm text-gray-400 dark:text-gray-500">
+        <p className="mt-6 text-sm text-gray-500 dark:text-gray-400">
           Florida (Remote) · Eastern Time · Usually replies within a day or two
         </p>
 

@@ -1,7 +1,20 @@
+import type { Metadata } from "next";
 import RocketGate from "./RocketGate";
 import Pearson from "./Pearson";
 import LiquidGravity from "./LiquidGravity";
 import PageOutro from "@/components/home/PageOutro";
+
+const title = "Engineering Experience";
+const description =
+  "Case studies from each role: the systems I built, the technologies I used, and the impact they had.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/experience" },
+  openGraph: { title, description, url: "/experience" },
+  twitter: { title, description },
+};
 
 export default function ExperiencePage() {
   return (

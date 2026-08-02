@@ -38,7 +38,7 @@ const technologies = [
 
 const roleProgression = (
   <span className="inline-flex flex-wrap items-center gap-1.5">
-    <span className="text-gray-400 dark:text-gray-500">SEO Analyst</span>
+    <span className="text-gray-500 dark:text-gray-400">SEO Analyst</span>
     <span className="text-gray-400 dark:text-gray-600" aria-hidden>
       →
     </span>

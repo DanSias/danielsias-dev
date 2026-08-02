@@ -1,7 +1,20 @@
+import type { Metadata } from "next";
 import { projects } from "@/constants/projects";
 import ProjectHero from "./ProjectHero";
 import ThemeSection from "./ThemeSection";
 import PageOutro from "@/components/home/PageOutro";
+
+const title = "Engineering Projects";
+const description =
+  "How I approach engineering problems: from a flagship platform to the tools and systems built along the way.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/projects" },
+  openGraph: { title, description, url: "/projects" },
+  twitter: { title, description },
+};
 
 export default function ProjectsPage() {
   const aiTooling = projects.filter((p) => p.theme === "ai-tooling");

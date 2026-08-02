@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   FaBriefcase,
@@ -58,6 +59,18 @@ const exploreLinks = [
     external: true,
   },
 ];
+
+const title = "Resume";
+const description =
+  "The PDF below is always the current version: everything else here just helps you explore faster.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/resume" },
+  openGraph: { title, description, url: "/resume" },
+  twitter: { title, description },
+};
 
 export default function ResumePage() {
   return (

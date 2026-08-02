@@ -21,7 +21,7 @@ const CapabilityCard: React.FC<{ capability: Capability }> = ({ capability }) =>
 
       <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">
+          <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
             Applied In
           </h4>
           <ul className="mt-1.5 space-y-1">
@@ -37,7 +37,7 @@ const CapabilityCard: React.FC<{ capability: Capability }> = ({ capability }) =>
           </ul>
         </div>
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">
+          <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
             Solves
           </h4>
           <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">

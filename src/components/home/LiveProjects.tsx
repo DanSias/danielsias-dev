@@ -72,7 +72,7 @@ const LiveProjects = () => {
           <p className="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed">
             {flagship.description}
           </p>
-          <p className="mt-4 text-sm text-gray-500 dark:text-gray-500 italic">
+          <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 italic">
             Private/internal application. No public demo available.
           </p>
           <Link

@@ -11,16 +11,16 @@ const EducationRow: React.FC = () => {
         and software.
       </p>
       <div className="flex justify-center">
-        <div className="max-w-6xl w-full flex flex-row justify-center items-start gap-6">
+        <div className="max-w-6xl w-full flex flex-col sm:flex-row justify-center items-center sm:items-start gap-6">
           {degrees.map((degree, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-6 w-1/3">
+              className="flex flex-col items-center text-center p-6 w-full sm:w-1/3">
               {/* School Logo */}
               <div className="w-24 h-24 rounded-full flex bg-gray-200 dark:bg-gray-800 text-gray-400">
                 <Image
                   src={degree.logo}
-                  alt="School Logo"
+                  alt={`${degree.school} logo`}
                   width={100}
                   height={100}
                   className="w-full h-full object-cover rounded-full"
@@ -29,13 +29,13 @@ const EducationRow: React.FC = () => {
 
               {/* Degree & School Info */}
               <div className="mt-5 flex flex-col items-center">
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-sky-50">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-sky-50">
                   {degree.degree}
-                </h1>
+                </h3>
                 <div className="w-12 h-1 bg-blue-500 rounded mt-2"></div>
-                <h2 className="text-lg font-semibold text-gray-800 dark:text-sky-100 mt-2">
+                <p className="text-lg font-semibold text-gray-800 dark:text-sky-100 mt-2">
                   {degree.school}
-                </h2>
+                </p>
               </div>
             </div>
           ))}

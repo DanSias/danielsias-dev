@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import AboutMe from "./AboutMe";
 import PageOutro from "@/components/home/PageOutro";
+
+const title = "How I Think";
+const description =
+  "The thought that keeps showing up in almost everything I build.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/about" },
+  openGraph: { title, description, url: "/about" },
+  twitter: { title, description },
+};
 
 const AboutPage: React.FC = () => {
   return (

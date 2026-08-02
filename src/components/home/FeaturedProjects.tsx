@@ -27,10 +27,10 @@ import {
   SiGitlab,
 } from "react-icons/si";
 
-import { ReactElement } from "react";
+import { cloneElement, ReactElement } from "react";
 
 // Map technology names to icons
-const techIcons: Record<string, ReactElement> = {
+const techIcons: Record<string, ReactElement<{ "aria-label"?: string }>> = {
   React: <FaReact />,
   "Node.js": <FaNodeJs />,
   PostgreSQL: <FaDatabase />,
@@ -68,7 +68,7 @@ const FeaturedProjects: React.FC = () => {
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                 {project.title}
               </h3>
-              <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                 {project.company}
               </p>
               <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm leading-relaxed">
@@ -82,7 +82,9 @@ const FeaturedProjects: React.FC = () => {
                   <Tooltip.Root>
                     <Tooltip.Trigger asChild>
                       <div className="cursor-pointer">
-                        {techIcons[tech] || (
+                        {techIcons[tech] ? (
+                          cloneElement(techIcons[tech], { "aria-label": tech })
+                        ) : (
                           <span className="text-sm">{tech}</span>
                         )}
                       </div>

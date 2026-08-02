@@ -16,10 +16,37 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://danielsias.dev";
+const siteTitle = "Daniel Sias | Full-Stack Software Engineer";
+const siteDescription =
+  "Full-Stack Software Engineer building developer tooling, payment platforms, and AI-assisted software.";
+
 export const metadata: Metadata = {
-  title: "Daniel Sias | Software Engineer & Full-Stack Developer",
-  description:
-    "Experienced software engineer specializing in full-stack development, React, Node.js, and scalable web applications.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteTitle,
+    template: "%s | Daniel Sias",
+  },
+  description: siteDescription,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Daniel Sias",
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -32,7 +59,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system">
-          <div className="min-h-dvh flex flex-col bg-slate-50 dark:bg-slate-900">
+          <div
+            data-testid="app-shell"
+            className="min-h-dvh flex flex-col bg-slate-50 dark:bg-slate-900">
             <Header />
 
             {/* Background Blur Elements */}

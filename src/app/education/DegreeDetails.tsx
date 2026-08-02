@@ -20,7 +20,7 @@ const EducationCard: React.FC<{ degree: Degree }> = ({ degree }) => {
             {degree.degree}
           </h2>
           <p className="text-gray-500 dark:text-gray-400">{degree.school}</p>
-          <p className="mt-0.5 text-xs text-gray-400 dark:text-gray-500">
+          <p className="mt-0.5 text-xs text-gray-500 dark:text-gray-400">
             {degree.location} · {degree.graduated}
           </p>
         </div>
@@ -28,7 +28,7 @@ const EducationCard: React.FC<{ degree: Degree }> = ({ degree }) => {
 
       <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
-          <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
             Foundation
           </h3>
           <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -36,7 +36,7 @@ const EducationCard: React.FC<{ degree: Degree }> = ({ degree }) => {
           </p>
         </div>
         <div>
-          <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
             Still Use Today
           </h3>
           <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -44,7 +44,7 @@ const EducationCard: React.FC<{ degree: Degree }> = ({ degree }) => {
           </p>
         </div>
         <div>
-          <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
             Visible In
           </h3>
           <ul className="mt-1.5 space-y-1">

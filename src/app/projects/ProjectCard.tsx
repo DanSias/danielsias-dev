@@ -43,13 +43,13 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
           {project.title}
         </h3>
-        <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
           {project.company}
         </p>
 
         <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">
+            <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
               Problem
             </h4>
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -57,7 +57,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
             </p>
           </div>
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">
+            <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
               Approach
             </h4>
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -65,7 +65,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
             </p>
           </div>
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">
+            <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
               Outcome
             </h4>
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -87,7 +87,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       <h3 className="font-semibold text-gray-900 dark:text-white">
         {project.title}
       </h3>
-      <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
+      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
         {project.company}
       </p>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">

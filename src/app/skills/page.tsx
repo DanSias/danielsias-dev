@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import { capabilities } from "@/constants/skills";
 import CapabilityCard from "./CapabilityCard";
 import PageOutro from "@/components/home/PageOutro";
+
+const title = "Engineering Capabilities";
+const description =
+  "What I build with, where I've applied it, and the kinds of problems it solves.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/skills" },
+  openGraph: { title, description, url: "/skills" },
+  twitter: { title, description },
+};
 
 export default function SkillsPage() {
   return (

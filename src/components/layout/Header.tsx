@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { FaCode, FaHome, FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
@@ -20,6 +20,15 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [menuOpen]);
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white dark:bg-slate-900/60 dark:backdrop-blur-md shadow-md z-50">

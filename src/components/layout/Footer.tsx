@@ -56,20 +56,23 @@ const Footer: React.FC = () => {
             href="https://github.com/DanSias"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
             className="hover:text-accent transition-colors">
-            <FaGithub className="text-2xl" />
+            <FaGithub className="text-2xl" aria-hidden="true" />
           </a>
           <a
             href="https://www.linkedin.com/in/daniel-sias"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
             className="hover:text-accent transition-colors">
-            <FaLinkedin className="text-2xl" />
+            <FaLinkedin className="text-2xl" aria-hidden="true" />
           </a>
           <a
             href="mailto:daniel.sias@gmail.com"
+            aria-label="Email"
             className="hover:text-accent transition-colors">
-            <FaEnvelope className="text-2xl" />
+            <FaEnvelope className="text-2xl" aria-hidden="true" />
           </a>
         </div>
       </div>
