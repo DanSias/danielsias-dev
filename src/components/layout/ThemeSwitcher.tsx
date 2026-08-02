@@ -5,17 +5,22 @@ import { FaSun, FaMoon } from "react-icons/fa";
 import * as Tooltip from "@radix-ui/react-tooltip";
 
 const ThemeSwitcher = () => {
+  // theme stays null until the effect below runs on the client, which also
+  // doubles as the SSR/CSR hydration-mismatch guard below.
   const [theme, setTheme] = useState<string | null>(null);
-  const [mounted, setMounted] = useState(false); // Prevents SSR/CSR mismatch
 
   useEffect(() => {
-    setMounted(true);
     const storedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches;
     const initialTheme = storedTheme || (prefersDark ? "dark" : "light");
     document.documentElement.classList.add(initialTheme);
+    // Reading localStorage/matchMedia can only happen post-mount, and this
+    // component intentionally renders null until then (see the guard below)
+    // to avoid a hydration mismatch — so there's no earlier point to set
+    // this from, and no external subscription to move it into a callback.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTheme(initialTheme);
   }, []);
 
@@ -29,7 +34,7 @@ const ThemeSwitcher = () => {
   };
 
   // Prevent hydration mismatch
-  if (!mounted) return null;
+  if (theme === null) return null;
 
   return (
     <Tooltip.Provider>
