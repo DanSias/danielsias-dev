@@ -55,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system">
@@ -77,7 +77,7 @@ export default function RootLayout({
             />
             <Image
               alt=""
-              width="567"
+              width="566"
               height="567"
               decoding="async"
               data-nimg="1"
