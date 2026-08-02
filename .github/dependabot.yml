@@ -10,6 +10,21 @@ updates:
           - "minor"
           - "patch"
     open-pull-requests-limit: 10
+    ignore:
+      # typescript-eslint (bundled via eslint-config-next) declares
+      # typescript: ">=4.8.4 <6.1.0" as of 8.65.0 - TS 7 is a native-port
+      # major with a different compiler/tooling model, and its own CI run
+      # failed with "typescript-eslint does not support TS 7.0". Remove
+      # once typescript-eslint publishes a release that supports it.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+      # eslint-plugin-react (bundled via eslint-config-next) still calls
+      # the removed context.getFilename() API and crashes ESLint 10's
+      # rule loader ("contextOrFilename.getFilename is not a function")
+      # on the react/display-name rule. Remove once eslint-plugin-react
+      # ships a release compatible with ESLint 10's rule context.
+      - dependency-name: "eslint"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
