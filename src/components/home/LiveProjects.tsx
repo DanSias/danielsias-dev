@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import WorkflowIllustration from "./WorkflowIllustration";
+import FlagshipRotation from "@/app/projects/FlagshipRotation";
 
 const flagship = {
   title: "Workflow Intelligence",
   description:
-    "Engineering workflow platform for tracking work items, stage history, operational metrics, and delivery visibility. Built to streamline engineering operations and give teams better visibility into how work moves through the pipeline.",
+    "The flagship platform I'm building at RocketGate: replacing scattered status updates with a single source of truth for how engineering work actually moves.",
   technologies: ["Laravel", "Vue", "TypeScript"],
 };
 
@@ -17,7 +17,7 @@ const projects = [
       "An AI prompt-generation tool built with React and Node to help teams structure clear, reusable prompts: from technical documentation to content workflows.",
     liveDemo: "https://promptworks.danielsias.dev",
     github: "https://github.com/DanSias/prompt-works",
-    image: "/images/promptworks-screenshot.png",
+    image: "/images/screenshots/promptworks.png",
   },
   {
     title: "Well Prompted",
@@ -25,7 +25,7 @@ const projects = [
       "A structured prompt library for ChatGPT and other LLMs, built to keep AI-assisted development consistent and maintainable across a codebase.",
     liveDemo: "https://wellprompted.danielsias.dev",
     github: "https://github.com/DanSias/well-prompted",
-    image: "/images/wellprompted-screenshot.png",
+    image: "/images/screenshots/wellprompted.png",
   },
   {
     title: "Well Applied",
@@ -33,7 +33,7 @@ const projects = [
       "An AI assistant that generates tailored prompts for job applications and interview prep: an exploration of structured prompt design outside of developer tooling.",
     liveDemo: "https://wellapplied.danielsias.dev",
     github: "https://github.com/DanSias/well-applied",
-    image: "/images/wellapplied-screenshot.png",
+    image: "/images/screenshots/wellapplied.png",
   },
 ];
 
@@ -42,24 +42,17 @@ const LiveProjects = () => {
     <section className="max-w-6xl mx-auto">
       <h2 className="text-heading">Selected Work</h2>
       <p className="text-subhead">
-        The platform I&apos;m building now, plus public tools I&apos;ve
-        shipped.
+        The platform I&apos;m building now, plus public tools I&apos;ve shipped.
       </p>
 
       {/* Flagship: Workflow Intelligence */}
       <div className="bg-white dark:bg-slate-900 rounded-lg border border-sky-200 dark:border-sky-900 overflow-hidden flex flex-col lg:flex-row">
-        <div
-          className="lg:w-1/2 bg-slate-100 dark:bg-slate-950 flex items-center justify-center p-8"
-          style={{
-            backgroundImage:
-              "radial-gradient(currentColor 1px, transparent 1px)",
-            backgroundSize: "16px 16px",
-          }}>
-          <div className="w-full max-w-md text-slate-300 dark:text-slate-800">
-            <WorkflowIllustration />
+        <div className="flex flex-col lg:w-2/5 border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-slate-800 bg-slate-950">
+          <div className="relative w-full aspect-[4/3]">
+            <FlagshipRotation />
           </div>
         </div>
-        <div className="lg:w-1/2 p-8 flex flex-col justify-center">
+        <div className="lg:w-3/5 p-8 flex flex-col justify-center">
           <span className="inline-flex w-fit items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-sky-100 text-sky-700 dark:bg-sky-500/10 dark:text-sky-300">
             Internal Platform
           </span>
@@ -76,7 +69,7 @@ const LiveProjects = () => {
             Private/internal application. No public demo available.
           </p>
           <Link
-            href="/projects"
+            href="/projects/workflow-intelligence"
             className="mt-5 inline-flex w-fit items-center gap-1.5 px-5 py-2.5 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
             View Case Study →
           </Link>

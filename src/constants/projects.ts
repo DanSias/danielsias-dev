@@ -1,4 +1,8 @@
-export type ProjectTheme = "ai-tooling" | "analytics" | "infrastructure";
+export type ProjectTheme =
+  | "ai-tooling"
+  | "analytics"
+  | "infrastructure"
+  | "professional";
 
 export type Project = {
   title: string;
@@ -12,9 +16,16 @@ export type Project = {
   problem?: string;
   approach?: string;
   outcome?: string;
-  technologies: string[];
+  /** Omit when the stack can't be verified rather than guessing. */
+  technologies?: string[];
   liveDemo?: string;
   github?: string;
+  /** Screenshot shown at the top of the card, e.g. "/images/screenshots/example.png". */
+  image?: string;
+  /** Link to a dedicated case-study page, e.g. "/projects/example". */
+  caseStudyHref?: string;
+  /** Short architectural/use-case note shown below tags, e.g. a relationship to another project. Self-contained — doesn't assume layout adjacency. */
+  note?: string;
 };
 
 export const projects: Project[] = [
@@ -29,6 +40,7 @@ export const projects: Project[] = [
     technologies: ["React", "Node.js", "Prisma", "Supabase", "Tailwind CSS"],
     liveDemo: "https://wellprompted.danielsias.dev",
     github: "https://github.com/DanSias/well-prompted",
+    image: "/images/screenshots/wellprompted.png",
   },
   {
     title: "PromptWorks",
@@ -39,6 +51,7 @@ export const projects: Project[] = [
     technologies: ["React", "Node.js"],
     liveDemo: "https://promptworks.danielsias.dev",
     github: "https://github.com/DanSias/prompt-works",
+    image: "/images/screenshots/promptworks.png",
   },
   {
     title: "Well Applied",
@@ -49,6 +62,65 @@ export const projects: Project[] = [
     technologies: ["React", "Node.js"],
     liveDemo: "https://wellapplied.danielsias.dev",
     github: "https://github.com/DanSias/well-applied",
+    image: "/images/screenshots/wellapplied.png",
+  },
+
+  // Professional & Internal Engineering (RocketGate)
+  {
+    title: "Verbatim",
+    company: "RocketGate",
+    theme: "professional",
+    description: "Grounded documentation Q&A and support assistance.",
+    problem:
+      "Documentation assistants can produce plausible answers without a reliable connection to the exact source material behind them.",
+    approach:
+      "Retrieve and rank source chunks deterministically, compute confidence outside the model, then use an LLM only for synthesis while mapping citations back to the actual retrieved sections.",
+    outcome:
+      "A traceable answer workflow with always-on source citations, graceful low-confidence escalation, multi-provider generation, and reusable retrieval infrastructure for support-reply drafting.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "OpenAI",
+      "Anthropic",
+      "Gemini",
+    ],
+    caseStudyHref: "/projects/verbatim",
+  },
+  {
+    title: "Transaction Toolkit",
+    company: "RocketGate",
+    theme: "professional",
+    description: "Local-first payment investigation and analytics.",
+    problem:
+      "Live transaction-history queries make repeated cross-cutting investigation cumbersome.",
+    approach:
+      "Snapshot and normalize transaction data locally, then analyze the same dataset across declines, authentication, retries, concentration, and operational signals.",
+    outcome:
+      "A repeatable investigation workflow with deterministic reporting and optional AI explanation over pre-aggregated, PII-excluding metrics.",
+    technologies: [
+      "TypeScript",
+      "React",
+      "Express",
+      "SQLite",
+      "OpenAI",
+      "RocketGate Transaction History API",
+    ],
+    caseStudyHref: "/projects/transaction-toolkit",
+  },
+  {
+    title: "Knowledge Exporter",
+    company: "RocketGate",
+    theme: "professional",
+    description: "Deterministic knowledge extraction for portable, diffable content.",
+    problem:
+      "Support and internal documentation accumulate in SaaS platforms as proprietary HTML that's difficult to audit, version, migrate, or reuse elsewhere.",
+    approach:
+      "Built a provider-abstracted, read-only export pipeline for Freshdesk and Confluence that converts source content to Markdown, applies deterministic quality transforms, and uses SHA-256 content comparison so reruns create, update, or skip files rather than rewriting everything.",
+    outcome:
+      "A repeatable extraction workflow with diff-aware results, per-run lineage, portable filesystem output, and a clean upstream boundary for downstream documentation and knowledge systems.",
+    technologies: ["Next.js", "TypeScript", "Freshdesk", "Confluence", "Markdown", "Vitest"],
+    note: "Designed as an upstream source-preparation layer for downstream knowledge tools, including Verbatim — a complementary, standalone tool rather than an integrated pipeline.",
   },
 
   // Analytics & Reporting Platforms

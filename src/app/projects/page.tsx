@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { projects } from "@/constants/projects";
 import ProjectHero from "./ProjectHero";
 import ThemeSection from "./ThemeSection";
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
+  const professional = projects.filter((p) => p.theme === "professional");
   const aiTooling = projects.filter((p) => p.theme === "ai-tooling");
   const analytics = projects.filter((p) => p.theme === "analytics");
   const infrastructure = projects.filter((p) => p.theme === "infrastructure");
@@ -32,6 +34,25 @@ export default function ProjectsPage() {
 
         <section className="pt-4">
           <ProjectHero />
+        </section>
+
+        <section className="py-12 border-t border-slate-200 dark:border-slate-800">
+          <ThemeSection
+            title="Professional & Internal Engineering"
+            intro="Internal tools built at RocketGate: turning scattered operational data and knowledge into systems people can actually use for support and engineering work."
+            projects={professional}
+          />
+          <p className="mt-8 text-sm text-gray-500 dark:text-gray-400">
+            This work sits alongside broader Developer Experience efforts at
+            RocketGate — onboarding guides, setup documentation, and
+            integration references for merchants and engineers. See it as
+            part of the{" "}
+            <Link
+              href="/experience"
+              className="text-blue-600 dark:text-sky-400 font-semibold hover:underline">
+              RocketGate experience →
+            </Link>
+          </p>
         </section>
 
         <section className="py-12 border-t border-slate-200 dark:border-slate-800">

@@ -20,7 +20,7 @@ export const capabilities: Capability[] = [
     whatIBuild:
       "Interactive dashboards and internal tools with React, Next.js, and Vue, built for clarity under real operational data, not just demos.",
     appliedIn: [
-      { label: "Workflow Intelligence", href: "/projects" },
+      { label: "Workflow Intelligence", href: "/projects/workflow-intelligence" },
       { label: "Nexus", href: "/projects" },
       { label: "Executive Insights Dashboard", href: "/projects" },
     ],
@@ -34,8 +34,8 @@ export const capabilities: Capability[] = [
     whatIBuild:
       "APIs and services behind payment platform tooling, internal systems, and data integrations, built in Laravel/PHP and Node.js.",
     appliedIn: [
-      { label: "Workflow Intelligence", href: "/projects" },
-      { label: "Transaction Reconstruction Tooling", href: "/experience" },
+      { label: "Workflow Intelligence", href: "/projects/workflow-intelligence" },
+      { label: "Transaction Toolkit", href: "/projects/transaction-toolkit" },
       { label: "Nexus", href: "/projects" },
     ],
     solves:
@@ -100,9 +100,9 @@ export const capabilities: Capability[] = [
     whatIBuild:
       "Production features and internal tools built with AI-assisted workflows: from first prototype to shipped code.",
     appliedIn: [
-      { label: "Workflow Intelligence", href: "/projects" },
+      { label: "Workflow Intelligence", href: "/projects/workflow-intelligence" },
       { label: "Well Prompted", href: "/projects" },
-      { label: "Transaction Reconstruction Tooling", href: "/experience" },
+      { label: "Transaction Toolkit", href: "/projects/transaction-toolkit" },
     ],
     solves:
       "Moving faster from prototype to production without cutting corners on code quality or maintainability.",
@@ -114,7 +114,7 @@ export const capabilities: Capability[] = [
     whatIBuild:
       "The tooling and processes (like Workflow Intelligence itself) that make a team's day-to-day engineering work more visible.",
     appliedIn: [
-      { label: "Workflow Intelligence", href: "/projects" },
+      { label: "Workflow Intelligence", href: "/projects/workflow-intelligence" },
       { label: "Developer Documentation & Onboarding", href: "/experience" },
       { label: "Marketing Forecasting Platform", href: "/experience" },
     ],

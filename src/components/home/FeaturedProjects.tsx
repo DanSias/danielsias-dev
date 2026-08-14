@@ -77,7 +77,7 @@ const FeaturedProjects: React.FC = () => {
             </div>
             {/* Technology Icons with Tooltip */}
             <div className="flex items-center gap-3 mt-auto">
-              {project.technologies.map((tech) => (
+              {(project.technologies ?? []).map((tech) => (
                 <Tooltip.Provider key={tech} delayDuration={200}>
                   <Tooltip.Root>
                     <Tooltip.Trigger asChild>

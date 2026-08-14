@@ -3,13 +3,21 @@ import { test, expect } from "@playwright/test";
 test("flagship project and cross-page links resolve to their intended destinations", async ({
   page,
 }) => {
-  // Homepage flagship CTA -> Projects (the Workflow Intelligence case study).
+  // Homepage flagship CTA -> the Workflow Intelligence case study.
   await page.goto("/");
   await page.locator("#selected-work").scrollIntoViewIfNeeded();
   await expect(
     page.getByRole("heading", { name: "Workflow Intelligence", level: 3 })
   ).toBeVisible();
   await page.getByRole("link", { name: "View Case Study →" }).click();
+  await expect(page).toHaveURL("/projects/workflow-intelligence");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Workflow Intelligence");
+
+  // Case study breadcrumb -> Projects.
+  await page
+    .getByRole("navigation", { name: "Breadcrumb" })
+    .getByRole("link", { name: "Projects" })
+    .click();
   await expect(page).toHaveURL("/projects");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Engineering Projects");
 
@@ -18,12 +26,13 @@ test("flagship project and cross-page links resolve to their intended destinatio
   await expect(page).toHaveURL("/experience");
   await expect(page.getByRole("heading", { name: "RocketGate", level: 2 })).toBeVisible();
 
-  // Experience's flagship link -> homepage Selected Work anchor.
+  // Experience's flagship link -> the Workflow Intelligence case study.
   await page.getByRole("link", { name: "View Workflow Intelligence →" }).click();
-  await expect(page).toHaveURL(/\/#selected-work$/);
-  await expect(page.locator("#selected-work")).toBeVisible();
+  await expect(page).toHaveURL("/projects/workflow-intelligence");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Workflow Intelligence");
 
   // "View All Projects" from the homepage's More Projects section.
+  await page.goto("/");
   await page.getByRole("link", { name: "View All Projects →" }).click();
   await expect(page).toHaveURL("/projects");
 

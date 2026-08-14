@@ -22,6 +22,18 @@ export const ROUTES: Route[] = [
     navLabel: "Experience",
   },
   { path: "/projects", heading: "Engineering Projects", navLabel: "Projects" },
+  {
+    path: "/projects/workflow-intelligence",
+    heading: "Workflow Intelligence",
+  },
+  {
+    path: "/projects/transaction-toolkit",
+    heading: "Transaction Toolkit",
+  },
+  {
+    path: "/projects/verbatim",
+    heading: "Verbatim",
+  },
   { path: "/skills", heading: "Engineering Capabilities", navLabel: "Skills" },
   {
     path: "/education",

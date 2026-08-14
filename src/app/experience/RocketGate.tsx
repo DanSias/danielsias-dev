@@ -4,9 +4,23 @@ import WorkflowIllustration from "@/components/home/WorkflowIllustration";
 
 const supportingSystems = [
   {
-    title: "Transaction Reconstruction Tooling",
+    title: "Verbatim",
     description:
-      "Internal tools for reconstructing transaction history and tracking operational data, backed by AI-assisted knowledge management: cutting investigation time when troubleshooting payment issues.",
+      "A grounded documentation Q&A and support-assistance system where retrieval, confidence, and citation mapping are deterministic and LLMs are limited to synthesis over pre-selected source material. The same knowledge layer also powers grounded support-reply drafting and internal retrieval/debugging tools.",
+    href: "/projects/verbatim",
+    linkLabel: "View Verbatim →",
+  },
+  {
+    title: "Transaction Toolkit",
+    description:
+      "A local-first investigation environment around the Transaction History API: snapshots and normalizes merchant transaction data for repeatable decline, authentication, retry, and concentration analysis, deterministic by default with optional AI explanation over pre-aggregated metrics.",
+    href: "/projects/transaction-toolkit",
+    linkLabel: "View Transaction Toolkit →",
+  },
+  {
+    title: "Knowledge Exporter",
+    description:
+      "A read-only extraction tool that converts Freshdesk and Confluence knowledge into deterministic Markdown. Hash-based idempotent writes and per-run change reports make repeated exports stable, reviewable, and ready for downstream documentation or knowledge systems.",
   },
   {
     title: "Developer Documentation & Onboarding",
@@ -70,7 +84,7 @@ const RocketGate: React.FC = () => {
             single source of truth for the team.
           </p>
           <Link
-            href="/#selected-work"
+            href="/projects/workflow-intelligence"
             className="mt-3 text-sm text-blue-600 dark:text-sky-400 font-semibold hover:underline w-fit">
             View Workflow Intelligence →
           </Link>
@@ -82,13 +96,20 @@ const RocketGate: React.FC = () => {
         {supportingSystems.map((system) => (
           <div
             key={system.title}
-            className="p-5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900">
+            className="p-5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 flex flex-col">
             <h3 className="font-semibold text-gray-900 dark:text-white">
               {system.title}
             </h3>
-            <p className="mt-1.5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+            <p className="mt-1.5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed flex-grow">
               {system.description}
             </p>
+            {system.href && (
+              <Link
+                href={system.href}
+                className="mt-3 text-sm text-blue-600 dark:text-sky-400 font-semibold hover:underline w-fit">
+                {system.linkLabel}
+              </Link>
+            )}
           </div>
         ))}
       </div>

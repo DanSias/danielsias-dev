@@ -25,7 +25,7 @@ const AboutMe: React.FC = () => {
             scenes: internal platforms and developer tooling that a team
             depends on without thinking about it.{" "}
             <Link
-              href="/projects"
+              href="/projects/workflow-intelligence"
               className="text-blue-600 dark:text-sky-400 font-semibold hover:underline">
               Workflow Intelligence
             </Link>{" "}
@@ -83,7 +83,7 @@ const AboutMe: React.FC = () => {
             to work: find the friction, build the thing that removes it. If
             you&apos;re curious what this looks like in practice,{" "}
             <Link
-              href="/projects"
+              href="/projects/workflow-intelligence"
               className="text-blue-600 dark:text-sky-400 font-semibold hover:underline">
               Workflow Intelligence
             </Link>{" "}

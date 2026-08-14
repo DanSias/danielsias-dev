@@ -1,5 +1,5 @@
 import Link from "next/link";
-import WorkflowIllustration from "@/components/home/WorkflowIllustration";
+import FlagshipRotation from "./FlagshipRotation";
 
 const technologies = [
   "Laravel",
@@ -13,19 +13,28 @@ const technologies = [
   "AI-Assisted Development",
 ];
 
+const highlights = [
+  {
+    label: "Problem",
+    text: "Engineering delivery status was fragmented across Jira, GitLab, and manual updates.",
+  },
+  {
+    label: "Approach",
+    text: "Built a Laravel/Vue platform that reconstructs workflow state from Jira and GitLab data and turns it into a shared operational model.",
+  },
+  {
+    label: "Outcome",
+    text: "A single source of truth for delivery health, evidence, and engineering workflow visibility.",
+  },
+];
+
 const ProjectHero: React.FC = () => {
   return (
     <div className="rounded-lg border border-sky-200 dark:border-sky-900 bg-white dark:bg-slate-900 overflow-hidden">
       <div className="flex flex-col lg:flex-row">
-        <div
-          className="lg:w-2/5 bg-slate-100 dark:bg-slate-950 flex items-center justify-center p-8"
-          style={{
-            backgroundImage:
-              "radial-gradient(currentColor 1px, transparent 1px)",
-            backgroundSize: "16px 16px",
-          }}>
-          <div className="w-full max-w-sm text-slate-300 dark:text-slate-800">
-            <WorkflowIllustration />
+        <div className="flex flex-col lg:w-2/5 border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-slate-800 bg-slate-950">
+          <div className="relative w-full aspect-[4/3]">
+            <FlagshipRotation />
           </div>
         </div>
 
@@ -47,37 +56,17 @@ const ProjectHero: React.FC = () => {
             engineering work actually moves.
           </p>
 
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-5">
-            <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                Problem
-              </h3>
-              <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                Status lived in Jira, GitLab, and scattered updates. Getting
-                a real picture of delivery progress meant manually
-                cross-referencing all three.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                Approach
-              </h3>
-              <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                A Laravel/Vue platform pulling from the Jira and GitLab APIs
-                to reconstruct stage history automatically, built with an
-                AI-assisted workflow from prototype to production.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                Outcome
-              </h3>
-              <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                Real-time visibility into work items and delivery progress:
-                now the team&apos;s single source of truth for how work is
-                moving.
-              </p>
-            </div>
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-4">
+            {highlights.map((item) => (
+              <div key={item.label}>
+                <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                  {item.label}
+                </h3>
+                <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {item.text}
+                </p>
+              </div>
+            ))}
           </div>
 
           <div className="mt-6 flex flex-wrap gap-2">
@@ -90,11 +79,18 @@ const ProjectHero: React.FC = () => {
             ))}
           </div>
 
-          <Link
-            href="/experience"
-            className="mt-6 inline-block text-sm text-blue-600 dark:text-sky-400 font-semibold hover:underline">
-            See it in context at RocketGate →
-          </Link>
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
+            <Link
+              href="/projects/workflow-intelligence"
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
+              View Case Study →
+            </Link>
+            <Link
+              href="/experience"
+              className="text-sm text-blue-600 dark:text-sky-400 font-semibold hover:underline">
+              See it in context at RocketGate →
+            </Link>
+          </div>
         </div>
       </div>
     </div>
