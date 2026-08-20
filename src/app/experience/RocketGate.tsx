@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ExperienceCaseStudy from "./ExperienceCaseStudy";
-import WorkflowIllustration from "@/components/home/WorkflowIllustration";
+import FlagshipRotation from "@/app/projects/FlagshipRotation";
 
 const supportingSystems = [
   {
@@ -21,6 +21,8 @@ const supportingSystems = [
     title: "Knowledge Exporter",
     description:
       "A read-only extraction tool that converts Freshdesk and Confluence knowledge into deterministic Markdown. Hash-based idempotent writes and per-run change reports make repeated exports stable, reviewable, and ready for downstream documentation or knowledge systems.",
+    href: "/projects/knowledge-exporter",
+    linkLabel: "View Knowledge Exporter →",
   },
   {
     title: "Developer Documentation & Onboarding",
@@ -60,15 +62,9 @@ const RocketGate: React.FC = () => {
       size="lg">
       {/* Flagship: Workflow Intelligence */}
       <div className="mt-6 rounded-lg border border-sky-200 dark:border-sky-900 bg-white dark:bg-slate-900 overflow-hidden flex flex-col md:flex-row">
-        <div
-          className="md:w-2/5 bg-slate-100 dark:bg-slate-950 flex items-center justify-center p-6"
-          style={{
-            backgroundImage:
-              "radial-gradient(currentColor 1px, transparent 1px)",
-            backgroundSize: "16px 16px",
-          }}>
-          <div className="w-full max-w-xs text-slate-300 dark:text-slate-800">
-            <WorkflowIllustration />
+        <div className="flex flex-col md:w-2/5 border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800 bg-slate-950">
+          <div className="relative w-full aspect-[4/3]">
+            <FlagshipRotation />
           </div>
         </div>
         <div className="md:w-3/5 p-6 flex flex-col justify-center">

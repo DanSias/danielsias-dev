@@ -14,6 +14,14 @@ type Props = {
   priority?: boolean;
   sizes?: string;
   className?: string;
+  /**
+   * Tailwind aspect-ratio class (e.g. "aspect-[4/3]") to crop an
+   * unusually tall preview down to a shorter on-page height. The
+   * lightbox always shows the full, uncropped master regardless.
+   */
+  cropAspect?: string;
+  /** Object-position class applied alongside cropAspect, e.g. "object-top". */
+  cropPosition?: string;
 };
 
 /**
@@ -30,6 +38,8 @@ const Screenshot: React.FC<Props> = ({
   priority,
   sizes = "(min-width: 1024px) 1104px, 100vw",
   className = "",
+  cropAspect,
+  cropPosition = "object-top",
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -39,16 +49,27 @@ const Screenshot: React.FC<Props> = ({
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="block w-full cursor-zoom-in overflow-hidden rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500">
-          <Image
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            priority={priority}
-            sizes={sizes}
-            className="w-full h-auto"
-          />
+          className={`block w-full cursor-zoom-in overflow-hidden rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 ${cropAspect ? `relative ${cropAspect}` : ""}`}>
+          {cropAspect ? (
+            <Image
+              src={src}
+              alt={alt}
+              fill
+              priority={priority}
+              sizes={sizes}
+              className={`object-cover ${cropPosition}`}
+            />
+          ) : (
+            <Image
+              src={src}
+              alt={alt}
+              width={width}
+              height={height}
+              priority={priority}
+              sizes={sizes}
+              className="w-full h-auto"
+            />
+          )}
         </button>
         {caption && (
           <figcaption className="mt-2 text-sm text-gray-500 dark:text-gray-400">

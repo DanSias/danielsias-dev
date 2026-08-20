@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
 import PageOutro from "@/components/home/PageOutro";
+import Screenshot from "../workflow-intelligence/Screenshot";
 import SnapshotFlowDiagram from "./SnapshotFlowDiagram";
 import DeterminismForkDiagram from "./DeterminismForkDiagram";
 
@@ -18,6 +19,24 @@ export const metadata: Metadata = {
   twitter: { title, description },
 };
 
+const SHOT_DIR = "/images/screenshots/transaction-toolkit";
+
+const SHOTS = {
+  identifier: {
+    src: `${SHOT_DIR}/transaction-toolkit-identifier.png`,
+    width: 2880,
+    height: 2440,
+  },
+  concentration: {
+    src: `${SHOT_DIR}/transaction-toolkit-concentration.png`,
+    width: 2880,
+    height: 2000,
+  },
+  report: { src: `${SHOT_DIR}/transaction-toolkit-report.png`, width: 2880, height: 2600 },
+} as const;
+
+const SHOT_SIZES_WIDE = "(min-width: 1024px) 1152px, 100vw";
+
 function Section({
   children,
   className = "",
@@ -32,6 +51,14 @@ function Section({
       <div className="max-w-5xl mx-auto px-6">{children}</div>
     </section>
   );
+}
+
+// Slightly wider breakout than the max-w-5xl reading column, reserved for
+// the dense multi-column screenshots (concentration tables, report detail).
+const WIDE = "max-w-[1200px] mx-auto px-6";
+
+function Wide({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return <div className={`${WIDE} ${className}`}>{children}</div>;
 }
 
 const analysisAreas = [
@@ -112,8 +139,23 @@ export default function TransactionToolkitPage() {
           <p className="mt-4 max-w-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
             {description}
           </p>
+        </div>
 
-          <dl className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl border-t border-slate-200 dark:border-slate-800 pt-6">
+        <Wide className="mt-10">
+          <Screenshot
+            src={SHOTS.identifier.src}
+            width={SHOTS.identifier.width}
+            height={SHOTS.identifier.height}
+            alt="Customer-level analysis for CUST-DEMO-1042: transaction, approval-rate, approved-volume, and recovered-revenue metric cards, a Key Insight panel flagging a below-expected approval rate, and a transaction timeline showing a decline followed by a successful retry."
+            caption="Customer-level history turns retries into measurable recovery: attempt sequence, approval rate, and recovered revenue stay visible together."
+            priority
+            sizes={SHOT_SIZES_WIDE}
+            cropAspect="aspect-[4/3]"
+          />
+        </Wide>
+
+        <div className="max-w-5xl mx-auto px-6">
+          <dl className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl border-t border-slate-200 dark:border-slate-800 pt-6">
             <div>
               <dt className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
                 Role
@@ -184,113 +226,140 @@ export default function TransactionToolkitPage() {
       </Section>
 
       {/* Designing for Investigation */}
-      <Section>
-        <div className="max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Designing for Investigation
-          </h2>
-          <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
-            The application isn&apos;t a static report generator. One
-            normalized snapshot supports several independent questions, each
-            backed by its own analysis module reading through a shared query
-            layer rather than the raw API — with signal ranking designed to
-            surface what&apos;s actually material rather than dump every
-            available metric.
-          </p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {analysisAreas.map((area) => (
-              <span
-                key={area}
-                className="inline-flex items-center px-3 py-1.5 rounded-md text-sm font-medium bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                {area}
-              </span>
-            ))}
-          </div>
-          <blockquote className="mt-8 border-l-4 border-sky-500 dark:border-sky-400 bg-sky-50/60 dark:bg-sky-500/5 rounded-r-lg py-4 pl-6 pr-4">
-            <p className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-sky-100 leading-snug">
-              The value of the snapshot is not persistence alone — it
-              creates a stable analytical boundary that every investigation
-              module can share.
+      <section className="py-14 border-t border-slate-200 dark:border-slate-800">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Designing for Investigation
+            </h2>
+            <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+              The application isn&apos;t a static report generator. One
+              normalized snapshot supports several independent questions, each
+              backed by its own analysis module reading through a shared query
+              layer rather than the raw API — with signal ranking designed to
+              surface what&apos;s actually material rather than dump every
+              available metric.
             </p>
-          </blockquote>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {analysisAreas.map((area) => (
+                <span
+                  key={area}
+                  className="inline-flex items-center px-3 py-1.5 rounded-md text-sm font-medium bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                  {area}
+                </span>
+              ))}
+            </div>
+            <blockquote className="mt-8 border-l-4 border-sky-500 dark:border-sky-400 bg-sky-50/60 dark:bg-sky-500/5 rounded-r-lg py-4 pl-6 pr-4">
+              <p className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-sky-100 leading-snug">
+                The value of the snapshot is not persistence alone — it
+                creates a stable analytical boundary that every investigation
+                module can share.
+              </p>
+            </blockquote>
+            <p className="mt-6 text-gray-600 dark:text-gray-300 leading-relaxed">
+              One of those questions comes before any single customer is in
+              view: is a decline isolated, or part of a broader shift across
+              the dataset?
+            </p>
+          </div>
         </div>
-        {/* Future screenshot: Concentration or Signals analysis view */}
-      </Section>
+        <Wide className="mt-8">
+          <Screenshot
+            src={SHOTS.concentration.src}
+            width={SHOTS.concentration.width}
+            height={SHOTS.concentration.height}
+            alt="Concentration analysis for Aster Peak Fitness showing a broad degradation pattern across four of four active dimensions, with Billing Type and Card Brand breakdowns highlighting Insufficient Funds as the largest decline driver."
+            caption="Dimension-level analysis separates an individual decline from a broader shift in transaction performance."
+            sizes={SHOT_SIZES_WIDE}
+          />
+        </Wide>
+      </section>
 
       {/* AI Without Giving Up Determinism */}
-      <Section padding="py-16 sm:py-20">
-        <div className="max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-            AI Without Giving Up Determinism
-          </h2>
-          <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
-            For the reports that support it, the deterministic report is
-            computed every time — regardless of whether AI is enabled,
-            available, or succeeds. The LLM was never the fallback
-            architecture; it&apos;s an optional layer on top of a report
-            generator that always runs on its own.
-          </p>
-        </div>
-
-        <div className="mt-8 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-12">
-          <DeterminismForkDiagram />
-        </div>
-
-        <blockquote className="mt-8 max-w-3xl border-l-4 border-sky-500 dark:border-sky-400 bg-sky-50/60 dark:bg-sky-500/5 rounded-r-lg py-4 pl-6 pr-4">
-          <p className="text-xl sm:text-2xl font-semibold text-slate-800 dark:text-sky-100 leading-snug">
-            AI explains a computed result. It does not decide what the
-            result is.
-          </p>
-        </blockquote>
-
-        <p className="mt-6 max-w-3xl text-gray-600 dark:text-gray-300 leading-relaxed">
-          Both paths — the deterministic report and the optional LLM
-          explanation — consume the same pre-computed, typed metrics
-          payload, so anything the model explains is grounded in the same
-          numbers the deterministic report already produced. The payload
-          contract structurally excludes raw transaction rows: no customer
-          IDs, no invoice IDs, no cardholder data reach the model at all.
-          OpenAI is the only implemented provider.
-        </p>
-
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 max-w-3xl">
-          <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-              What AI Does
-            </h3>
-            <ul className="mt-3 space-y-2.5">
-              {aiDoes.map((item) => (
-                <li
-                  key={item}
-                  className="flex gap-3 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                  <span className="text-sky-500 dark:text-sky-400 mt-0.5 shrink-0" aria-hidden="true">
-                    →
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+      <section className="py-16 sm:py-20 border-t border-slate-200 dark:border-slate-800">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+              AI Without Giving Up Determinism
+            </h2>
+            <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+              For the reports that support it, the deterministic report is
+              computed every time — regardless of whether AI is enabled,
+              available, or succeeds. The LLM was never the fallback
+              architecture; it&apos;s an optional layer on top of a report
+              generator that always runs on its own.
+            </p>
           </div>
-          <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-              What AI Never Does
-            </h3>
-            <ul className="mt-3 space-y-2.5">
-              {aiNeverDoes.map((item) => (
-                <li
-                  key={item}
-                  className="flex gap-3 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                  <span className="text-slate-400 dark:text-slate-600 mt-0.5 shrink-0" aria-hidden="true">
-                    →
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+
+          <div className="mt-8 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-12">
+            <DeterminismForkDiagram />
+          </div>
+
+          <blockquote className="mt-8 max-w-3xl border-l-4 border-sky-500 dark:border-sky-400 bg-sky-50/60 dark:bg-sky-500/5 rounded-r-lg py-4 pl-6 pr-4">
+            <p className="text-xl sm:text-2xl font-semibold text-slate-800 dark:text-sky-100 leading-snug">
+              AI explains a computed result. It does not decide what the
+              result is.
+            </p>
+          </blockquote>
+
+          <p className="mt-6 max-w-3xl text-gray-600 dark:text-gray-300 leading-relaxed">
+            Both paths — the deterministic report and the optional LLM
+            explanation — consume the same pre-computed, typed metrics
+            payload, so anything the model explains is grounded in the same
+            numbers the deterministic report already produced. The payload
+            contract structurally excludes raw transaction rows: no customer
+            IDs, no invoice IDs, no cardholder data reach the model at all.
+            OpenAI is the only implemented provider.
+          </p>
+
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 max-w-3xl">
+            <div>
+              <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                What AI Does
+              </h3>
+              <ul className="mt-3 space-y-2.5">
+                {aiDoes.map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-3 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <span className="text-sky-500 dark:text-sky-400 mt-0.5 shrink-0" aria-hidden="true">
+                      →
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                What AI Never Does
+              </h3>
+              <ul className="mt-3 space-y-2.5">
+                {aiNeverDoes.map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-3 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <span className="text-slate-400 dark:text-slate-600 mt-0.5 shrink-0" aria-hidden="true">
+                      →
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-        {/* Future screenshot: report detail with deterministic/LLM status and version info */}
-      </Section>
+        <Wide className="mt-10">
+          <Screenshot
+            src={SHOTS.report.src}
+            width={SHOTS.report.width}
+            height={SHOTS.report.height}
+            alt="Decline Investigation report for Aster Peak Fitness with Top Decline Drivers and Previous Period Comparison findings, alongside a sidebar showing Generated By: deterministic, LLM Status: skipped, and versioned payload/prompt identifiers."
+            caption="Reports preserve the generation boundary alongside the conclusion — deterministic output, payload version, and prompt version stay inspectable rather than disappearing once the AI layer is skipped."
+            sizes={SHOT_SIZES_WIDE}
+          />
+        </Wide>
+      </section>
 
       {/* Traceable Reports & Local-First Security */}
       <Section>

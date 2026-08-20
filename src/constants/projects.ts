@@ -16,12 +16,16 @@ export type Project = {
   problem?: string;
   approach?: string;
   outcome?: string;
+  /** One concise sentence naming the interesting engineering idea, for the project-index card. Case-study page carries the full depth. */
+  engineeringHook?: string;
   /** Omit when the stack can't be verified rather than guessing. */
   technologies?: string[];
   liveDemo?: string;
   github?: string;
   /** Screenshot shown at the top of the card, e.g. "/images/screenshots/example.png". */
   image?: string;
+  /** Object-position class biasing the card crop, e.g. "object-top" for a tall source image. */
+  imagePosition?: string;
   /** Link to a dedicated case-study page, e.g. "/projects/example". */
   caseStudyHref?: string;
   /** Short architectural/use-case note shown below tags, e.g. a relationship to another project. Self-contained — doesn't assume layout adjacency. */
@@ -77,14 +81,10 @@ export const projects: Project[] = [
       "Retrieve and rank source chunks deterministically, compute confidence outside the model, then use an LLM only for synthesis while mapping citations back to the actual retrieved sections.",
     outcome:
       "A traceable answer workflow with always-on source citations, graceful low-confidence escalation, multi-provider generation, and reusable retrieval infrastructure for support-reply drafting.",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "PostgreSQL",
-      "OpenAI",
-      "Anthropic",
-      "Gemini",
-    ],
+    engineeringHook:
+      "Retrieves and ranks source chunks deterministically, then uses an LLM only for synthesis — every citation maps back to the exact retrieved section, with graceful escalation when confidence is low.",
+    technologies: ["Next.js", "TypeScript", "OpenAI", "Anthropic"],
+    image: "/images/screenshots/verbatim/verbatim-answer.png",
     caseStudyHref: "/projects/verbatim",
   },
   {
@@ -98,14 +98,11 @@ export const projects: Project[] = [
       "Snapshot and normalize transaction data locally, then analyze the same dataset across declines, authentication, retries, concentration, and operational signals.",
     outcome:
       "A repeatable investigation workflow with deterministic reporting and optional AI explanation over pre-aggregated, PII-excluding metrics.",
-    technologies: [
-      "TypeScript",
-      "React",
-      "Express",
-      "SQLite",
-      "OpenAI",
-      "RocketGate Transaction History API",
-    ],
+    engineeringHook:
+      "Snapshots transaction history locally, then analyzes the same dataset across declines, retries, and concentration — deterministic reporting by default, with optional AI explanation layered on top.",
+    technologies: ["TypeScript", "React", "SQLite", "OpenAI"],
+    image: "/images/screenshots/transaction-toolkit/transaction-toolkit-identifier.png",
+    imagePosition: "object-top",
     caseStudyHref: "/projects/transaction-toolkit",
   },
   {
@@ -119,8 +116,12 @@ export const projects: Project[] = [
       "Built a provider-abstracted, read-only export pipeline for Freshdesk and Confluence that converts source content to Markdown, applies deterministic quality transforms, and uses SHA-256 content comparison so reruns create, update, or skip files rather than rewriting everything.",
     outcome:
       "A repeatable extraction workflow with diff-aware results, per-run lineage, portable filesystem output, and a clean upstream boundary for downstream documentation and knowledge systems.",
-    technologies: ["Next.js", "TypeScript", "Freshdesk", "Confluence", "Markdown", "Vitest"],
+    engineeringHook:
+      "A provider-abstracted pipeline that converts Freshdesk and Confluence content into deterministic Markdown, using SHA-256 comparison so reruns diff cleanly instead of rewriting everything.",
+    technologies: ["Next.js", "TypeScript", "Freshdesk", "Confluence"],
+    image: "/images/screenshots/knowledge-exporter/knowledge-exporter-inventory.png",
     note: "Designed as an upstream source-preparation layer for downstream knowledge tools, including Verbatim — a complementary, standalone tool rather than an integrated pipeline.",
+    caseStudyHref: "/projects/knowledge-exporter",
   },
 
   // Analytics & Reporting Platforms

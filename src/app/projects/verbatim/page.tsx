@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { FaChevronDown, FaCheck } from "react-icons/fa";
 import PageOutro from "@/components/home/PageOutro";
+import Screenshot from "../workflow-intelligence/Screenshot";
 import IngestionFlowDiagram from "./IngestionFlowDiagram";
 import RetrievalFlowDiagram from "./RetrievalFlowDiagram";
 import TrustFlowDiagram from "./TrustFlowDiagram";
@@ -10,6 +11,27 @@ import TrustFlowDiagram from "./TrustFlowDiagram";
 const title = "Verbatim";
 const description =
   "A documentation Q&A and support-assistance system that retrieves relevant internal knowledge, generates concise answers over that context, and structurally maps every citation back to the exact source section it came from.";
+
+const SHOT_DIR = "/images/screenshots/verbatim";
+
+const SHOTS = {
+  answer: { src: `${SHOT_DIR}/verbatim-answer.png`, width: 2880, height: 2000 },
+  answerDebug: {
+    src: `${SHOT_DIR}/verbatim-answer-debug.png`,
+    width: 2880,
+    height: 2000,
+  },
+  evidence: { src: `${SHOT_DIR}/verbatim-evidence.png`, width: 2880, height: 2000 },
+  sourceDetail: {
+    src: `${SHOT_DIR}/verbatim-source-detail.png`,
+    width: 2880,
+    height: 2000,
+  },
+  reply: { src: `${SHOT_DIR}/verbatim-reply.png`, width: 2880, height: 2000 },
+} as const;
+
+const SHOT_SIZES = "(min-width: 1024px) 976px, 100vw";
+const SHOT_SIZES_WIDE = "(min-width: 1024px) 1152px, 100vw";
 
 export const metadata: Metadata = {
   title,
@@ -33,6 +55,15 @@ function Section({
       <div className="max-w-5xl mx-auto px-6">{children}</div>
     </section>
   );
+}
+
+// Slightly wider breakout than the max-w-5xl reading column, reserved for
+// the two screenshots dense enough to benefit from the extra width (ranked
+// evidence excerpts, the two-panel reply composer).
+const WIDE = "max-w-[1200px] mx-auto px-6";
+
+function Wide({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return <div className={`${WIDE} ${className}`}>{children}</div>;
 }
 
 const identityDecisions = [
@@ -158,7 +189,19 @@ export default function VerbatimPage() {
             {description}
           </p>
 
-          <dl className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl border-t border-slate-200 dark:border-slate-800 pt-6">
+          <div className="mt-10">
+            <Screenshot
+              src={SHOTS.answer.src}
+              width={SHOTS.answer.width}
+              height={SHOTS.answer.height}
+              alt="Verbatim's Answer view: a question about webhook delivery failures, a generated answer with inline [2] and [4] citation markers, an Answer Mode badge, and a Confidence: Medium indicator, followed by a Citations list resolving each marker to its source."
+              caption="The generated answer stays tied to the source material through visible citations and a confidence signal — not just prose."
+              priority
+              sizes={SHOT_SIZES}
+            />
+          </div>
+
+          <dl className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl border-t border-slate-200 dark:border-slate-800 pt-6">
             <div>
               <dt className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
                 Role
@@ -260,12 +303,22 @@ export default function VerbatimPage() {
             </div>
           ))}
         </div>
+        <div className="mt-6">
+          <Screenshot
+            src={SHOTS.sourceDetail.src}
+            width={SHOTS.sourceDetail.width}
+            height={SHOTS.sourceDetail.height}
+            alt="Source detail view for 'Webhook Delivery and Retries,' showing the document split into five chunks, each with a heading path, and one chunk expanded to show its full content."
+            caption="Every ingested document resolves to addressable chunks with a stable heading path — the structure retrieval and citations point back to."
+            sizes={SHOT_SIZES}
+          />
+        </div>
         <p className="mt-8 max-w-3xl text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
           Verbatim deliberately consumes portable document formats rather
           than coupling retrieval directly to a specific SaaS knowledge
           platform. A separate tool,{" "}
           <Link
-            href="/projects"
+            href="/projects/knowledge-exporter"
             className="text-blue-600 dark:text-sky-400 font-semibold hover:underline">
             Knowledge Exporter
           </Link>
@@ -274,39 +327,49 @@ export default function VerbatimPage() {
           integrated: there&apos;s no shared database, live sync, or direct
           handoff between them today.
         </p>
-        {/* Future screenshot: source/chunk inspector — document -> heading path -> anchor -> chunk content */}
       </Section>
 
       {/* Retrieval Before Generation */}
-      <Section>
-        <div className="max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Retrieval Before Generation
-          </h2>
-          <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
-            Retrieval is completely deterministic — and it&apos;s
-            keyword-based, on purpose. Query terms are tokenized,
-            normalized, and expanded (plurals, synonyms), then scored
-            against candidate chunks using term-frequency weighting,
-            quoted-phrase matching, a proximity bonus, heading weighting,
-            and square-root length normalization, scoped to the requesting
-            workspace. The result is a ranked, top-K set of chunks — not a
-            formal BM25 implementation, but a deliberate, inspectable
-            weighted lexical scoring engine.
-          </p>
+      <section className="py-14 border-t border-slate-200 dark:border-slate-800">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Retrieval Before Generation
+            </h2>
+            <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+              Retrieval is completely deterministic — and it&apos;s
+              keyword-based, on purpose. Query terms are tokenized,
+              normalized, and expanded (plurals, synonyms), then scored
+              against candidate chunks using term-frequency weighting,
+              quoted-phrase matching, a proximity bonus, heading weighting,
+              and square-root length normalization, scoped to the requesting
+              workspace. The result is a ranked, top-K set of chunks — not a
+              formal BM25 implementation, but a deliberate, inspectable
+              weighted lexical scoring engine.
+            </p>
+          </div>
+          <div className="mt-8 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-12 overflow-x-auto">
+            <RetrievalFlowDiagram />
+          </div>
+          <blockquote className="mt-8 max-w-3xl border-l-4 border-sky-500 dark:border-sky-400 bg-sky-50/60 dark:bg-sky-500/5 rounded-r-lg py-4 pl-6 pr-4">
+            <p className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-sky-100 leading-snug">
+              Retrieval stays inspectable: the system can show exactly which
+              chunks ranked highest and why — not opaque model reasoning —
+              became the context window.
+            </p>
+          </blockquote>
         </div>
-        <div className="mt-8 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-12 overflow-x-auto">
-          <RetrievalFlowDiagram />
-        </div>
-        <blockquote className="mt-8 max-w-3xl border-l-4 border-sky-500 dark:border-sky-400 bg-sky-50/60 dark:bg-sky-500/5 rounded-r-lg py-4 pl-6 pr-4">
-          <p className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-sky-100 leading-snug">
-            Retrieval stays inspectable: the system can show exactly which
-            chunks ranked highest and why — not opaque model reasoning —
-            became the context window.
-          </p>
-        </blockquote>
-        {/* Future screenshot: /pilot/ask retrieval-debug view showing ranked chunks and scores */}
-      </Section>
+        <Wide className="mt-8">
+          <Screenshot
+            src={SHOTS.evidence.src}
+            width={SHOTS.evidence.width}
+            height={SHOTS.evidence.height}
+            alt="Ask view showing eight keyword-retrieval results ranked by score, each with its source document, heading path, and a matched excerpt."
+            caption="Retrieval remains inspectable: ranked evidence, source paths, and excerpts are visible independently of generation."
+            sizes={SHOT_SIZES_WIDE}
+          />
+        </Wide>
+      </section>
 
       {/* Trust Lives Outside the Model */}
       <Section padding="py-16 sm:py-20">
@@ -360,60 +423,80 @@ export default function VerbatimPage() {
             &ldquo;help a human escalate.&rdquo;
           </p>
         </div>
-        {/* Future screenshot: /pilot/answer — question, generated answer, [1][2] citations, source links, confidence */}
+        <div className="mt-8">
+          <Screenshot
+            src={SHOTS.answerDebug.src}
+            width={SHOTS.answerDebug.width}
+            height={SHOTS.answerDebug.height}
+            alt="Debug information panel below a generated answer, showing provider, model, retrieval mode, chunks used, and confidence signals: top score, second score, score gap, and result count."
+            caption="Confidence comes from retrieval signals — top score, runner-up score, and the gap between them — not from asking the model how sure it is."
+            sizes={SHOT_SIZES}
+          />
+        </div>
       </Section>
 
       {/* One Retrieval Core, Multiple Products */}
-      <Section>
-        <div className="max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-            One Retrieval Core, Multiple Products
-          </h2>
-          <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
-            The retrieval and grounding layer isn&apos;t coupled to one
-            chatbot UI. The same corpus and ranking logic support three
-            different surfaces:
-          </p>
-        </div>
-
-        <div className="mt-8 flex flex-col items-center">
-          <span className="inline-flex items-center px-8 py-5 text-lg sm:text-xl font-bold rounded-lg border-2 bg-sky-50 text-sky-800 border-sky-300 dark:bg-sky-500/10 dark:text-sky-200 dark:border-sky-700">
-            Retrieval &amp; Grounding Layer
-          </span>
-          <div className="flex flex-col items-center py-3" aria-hidden="true">
-            <span className="w-px h-5 bg-slate-300 dark:bg-slate-700" />
-            <FaChevronDown className="text-lg text-slate-400 dark:text-slate-600" />
-            <span className="w-px h-5 bg-slate-300 dark:bg-slate-700" />
+      <section className="py-14 border-t border-slate-200 dark:border-slate-800">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+              One Retrieval Core, Multiple Products
+            </h2>
+            <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+              The retrieval and grounding layer isn&apos;t coupled to one
+              chatbot UI. The same corpus and ranking logic support three
+              different surfaces:
+            </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-3">
+
+          <div className="mt-8 flex flex-col items-center">
+            <span className="inline-flex items-center px-8 py-5 text-lg sm:text-xl font-bold rounded-lg border-2 bg-sky-50 text-sky-800 border-sky-300 dark:bg-sky-500/10 dark:text-sky-200 dark:border-sky-700">
+              Retrieval &amp; Grounding Layer
+            </span>
+            <div className="flex flex-col items-center py-3" aria-hidden="true">
+              <span className="w-px h-5 bg-slate-300 dark:bg-slate-700" />
+              <FaChevronDown className="text-lg text-slate-400 dark:text-slate-600" />
+              <span className="w-px h-5 bg-slate-300 dark:bg-slate-700" />
+            </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              {productSurfaces.map((surface) => (
+                <span
+                  key={surface.title}
+                  className="inline-flex items-center px-5 py-3.5 rounded-lg border text-sm sm:text-base bg-emerald-50 text-emerald-800 border-emerald-300 dark:bg-emerald-500/10 dark:text-emerald-200 dark:border-emerald-900">
+                  {surface.title}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-6 max-w-4xl">
             {productSurfaces.map((surface) => (
-              <span
-                key={surface.title}
-                className="inline-flex items-center px-5 py-3.5 rounded-lg border text-sm sm:text-base bg-emerald-50 text-emerald-800 border-emerald-300 dark:bg-emerald-500/10 dark:text-emerald-200 dark:border-emerald-900">
-                {surface.title}
-              </span>
+              <div key={surface.title}>
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-white">
+                  {surface.title}
+                </h3>
+                <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {surface.body}
+                </p>
+              </div>
             ))}
           </div>
+          <p className="mt-6 max-w-3xl text-sm text-gray-500 dark:text-gray-400 italic">
+            The embedded documentation widget is currently a UI mock, not a
+            completed integration.
+          </p>
         </div>
-
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-6 max-w-4xl">
-          {productSurfaces.map((surface) => (
-            <div key={surface.title}>
-              <h3 className="text-sm font-semibold text-gray-900 dark:text-white">
-                {surface.title}
-              </h3>
-              <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                {surface.body}
-              </p>
-            </div>
-          ))}
-        </div>
-        <p className="mt-6 max-w-3xl text-sm text-gray-500 dark:text-gray-400 italic">
-          The embedded documentation widget is currently a UI mock, not a
-          completed integration.
-        </p>
-        {/* Future screenshot: Reply Composer surface */}
-      </Section>
+        <Wide className="mt-8">
+          <Screenshot
+            src={SHOTS.reply.src}
+            width={SHOTS.reply.width}
+            height={SHOTS.reply.height}
+            alt="Reply Composer showing a two-panel workflow: generated reply sections (acknowledgement, diagnosis, explanation, action steps, closing) with alternate choices on the left, assembled into a single customer-ready reply on the right."
+            caption="Grounded knowledge can be assembled into a customer-ready reply rather than stopping at Q&A."
+            sizes={SHOT_SIZES_WIDE}
+          />
+        </Wide>
+      </section>
 
       {/* Multi-Provider AI Without Moving the Trust Boundary */}
       <Section>

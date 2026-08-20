@@ -34,6 +34,10 @@ export const ROUTES: Route[] = [
     path: "/projects/verbatim",
     heading: "Verbatim",
   },
+  {
+    path: "/projects/knowledge-exporter",
+    heading: "Knowledge Exporter",
+  },
   { path: "/skills", heading: "Engineering Capabilities", navLabel: "Skills" },
   {
     path: "/education",

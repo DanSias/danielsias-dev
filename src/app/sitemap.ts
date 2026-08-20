@@ -10,6 +10,7 @@ const routes = [
   "/projects/workflow-intelligence",
   "/projects/verbatim",
   "/projects/transaction-toolkit",
+  "/projects/knowledge-exporter",
   "/skills",
   "/education",
   "/resume",

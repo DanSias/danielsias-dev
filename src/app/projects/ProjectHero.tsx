@@ -1,26 +1,16 @@
 import Link from "next/link";
 import FlagshipRotation from "./FlagshipRotation";
 
-const technologies = [
-  "Laravel",
-  "PHP",
-  "MySQL",
-  "Vue",
-  "TypeScript",
-  "Tailwind CSS",
-  "GitLab",
-  "Jira",
-  "AI-Assisted Development",
-];
+const technologies = ["Laravel", "Vue", "TypeScript", "Tailwind CSS", "GitLab", "Jira"];
 
 const highlights = [
   {
     label: "Problem",
-    text: "Engineering delivery status was fragmented across Jira, GitLab, and manual updates.",
+    text: "Delivery status was fragmented across Jira, GitLab, and manual updates.",
   },
   {
     label: "Approach",
-    text: "Built a Laravel/Vue platform that reconstructs workflow state from Jira and GitLab data and turns it into a shared operational model.",
+    text: "A Laravel/Vue platform that reconstructs workflow state from Jira and GitLab into one shared operational model.",
   },
   {
     label: "Outcome",
