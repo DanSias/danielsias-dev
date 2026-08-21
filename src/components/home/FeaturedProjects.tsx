@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { projects } from "@/constants/projects";
 import * as Tooltip from "@radix-ui/react-tooltip";
-const featuredProjects = projects
-  .filter((project) => project.featured)
-  .sort((a, b) => Number(!!b.lead) - Number(!!a.lead));
+const aiToolingProjects = projects.filter(
+  (project) => project.theme === "ai-tooling"
+);
 import {
   FaReact,
   FaNodeJs,
@@ -54,13 +54,13 @@ const techIcons: Record<string, ReactElement<{ "aria-label"?: string }>> = {
 const FeaturedProjects: React.FC = () => {
   return (
     <section className="max-w-6xl mx-auto">
-      <h2 className="text-heading">More Projects</h2>
+      <h2 className="text-heading">AI-Assisted Developer Tools</h2>
       <p className="text-subhead">
-        Full-stack architecture and AI-assisted tooling, beyond the flagship
-        above.
+        Personal tools exploring how AI fits into a real development
+        workflow.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 max-w-3xl mx-auto gap-6">
-        {featuredProjects.map((project) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {aiToolingProjects.map((project) => (
           <div
             key={project.title}
             className="p-6 bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-700 flex flex-col h-full">

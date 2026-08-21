@@ -1,7 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import FlagshipRotation from "@/app/projects/FlagshipRotation";
+import ProjectCard from "@/app/projects/ProjectCard";
+import { projects } from "@/constants/projects";
 
 const flagship = {
   title: "Workflow Intelligence",
@@ -10,39 +11,17 @@ const flagship = {
   technologies: ["Laravel", "Vue", "TypeScript"],
 };
 
-const projects = [
-  {
-    title: "PromptWorks",
-    description:
-      "An AI prompt-generation tool built with React and Node to help teams structure clear, reusable prompts: from technical documentation to content workflows.",
-    liveDemo: "https://promptworks.danielsias.dev",
-    github: "https://github.com/DanSias/prompt-works",
-    image: "/images/screenshots/promptworks.png",
-  },
-  {
-    title: "Well Prompted",
-    description:
-      "A structured prompt library for ChatGPT and other LLMs, built to keep AI-assisted development consistent and maintainable across a codebase.",
-    liveDemo: "https://wellprompted.danielsias.dev",
-    github: "https://github.com/DanSias/well-prompted",
-    image: "/images/screenshots/wellprompted.png",
-  },
-  {
-    title: "Well Applied",
-    description:
-      "An AI assistant that generates tailored prompts for job applications and interview prep: an exploration of structured prompt design outside of developer tooling.",
-    liveDemo: "https://wellapplied.danielsias.dev",
-    github: "https://github.com/DanSias/well-applied",
-    image: "/images/screenshots/wellapplied.png",
-  },
-];
+const professionalProjects = projects.filter(
+  (project) => project.theme === "professional"
+);
 
 const LiveProjects = () => {
   return (
     <section className="max-w-6xl mx-auto">
       <h2 className="text-heading">Selected Work</h2>
       <p className="text-subhead">
-        The platform I&apos;m building now, plus public tools I&apos;ve shipped.
+        The flagship platform I&apos;m building at RocketGate, and the
+        professional systems built around it.
       </p>
 
       {/* Flagship: Workflow Intelligence */}
@@ -76,46 +55,10 @@ const LiveProjects = () => {
         </div>
       </div>
 
-      {/* Public projects */}
+      {/* Supporting professional systems */}
       <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-        {projects.map((project) => (
-          <div
-            key={project.title}
-            className="bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-700 flex flex-col overflow-hidden">
-            <div className="relative w-full h-44">
-              <Image
-                src={project.image}
-                alt={`${project.title} screenshot`}
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="p-6 flex-grow">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                {project.title}
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm leading-relaxed">
-                {project.description}
-              </p>
-            </div>
-            <div className="flex gap-3 p-6 pt-0">
-              <a
-                href={project.liveDemo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                Live Demo
-              </a>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 text-sm bg-gray-800 text-white rounded-lg hover:bg-gray-700 border border-transparent hover:border-gray-500">
-                GitHub
-              </a>
-            </div>
-          </div>
+        {professionalProjects.map((project) => (
+          <ProjectCard key={project.title} project={project} />
         ))}
       </div>
     </section>

@@ -10,8 +10,6 @@ export type Project = {
   theme: ProjectTheme;
   /** Marks the standout project within its theme, giving it a larger, richer card. */
   lead?: boolean;
-  /** Shown on the homepage's "More Projects" section. */
-  featured?: boolean;
   description: string;
   problem?: string;
   approach?: string;
@@ -38,7 +36,6 @@ export const projects: Project[] = [
     title: "Well Prompted",
     company: "Personal Project",
     theme: "ai-tooling",
-    featured: true,
     description:
       "Developers lose time re-deriving good prompts for the same recurring tasks (debugging, documentation, code review) from scratch every time. Built a structured prompt library with React, Node, and Prisma that keeps AI-assisted development consistent and reusable across a codebase instead of ad hoc.",
     technologies: ["React", "Node.js", "Prisma", "Supabase", "Tailwind CSS"],
@@ -130,7 +127,6 @@ export const projects: Project[] = [
     company: "Pearson Online Learning Services",
     theme: "analytics",
     lead: true,
-    featured: true,
     description:
       "A full-stack analytics platform unifying BigQuery and Salesforce data behind a single API layer.",
     problem:
