@@ -21,6 +21,12 @@ export const ROUTES: Route[] = [
     heading: "Engineering Experience",
     navLabel: "Experience",
   },
+  // Footer-only route (see Footer.tsx) — deliberately has no navLabel so it
+  // isn't asserted as part of the primary header nav.
+  {
+    path: "/marketing",
+    heading: "Marketing, Analytics & Digital Experience",
+  },
   { path: "/projects", heading: "Engineering Projects", navLabel: "Projects" },
   {
     path: "/projects/workflow-intelligence",

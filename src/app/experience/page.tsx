@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import RocketGate from "./RocketGate";
 import Pearson from "./Pearson";
 import LiquidGravity from "./LiquidGravity";
@@ -26,19 +27,29 @@ export default function ExperiencePage() {
           I used, and the impact they had.
         </p>
 
-        <section className="pt-4">
+        <section id="rocketgate" className="pt-4 scroll-mt-24">
           <RocketGate />
         </section>
 
-        <section className="py-12 border-t border-slate-200 dark:border-slate-800">
+        <section id="pearson" className="py-12 border-t border-slate-200 dark:border-slate-800 scroll-mt-24">
           <Pearson />
         </section>
 
-        <section className="py-12 border-t border-slate-200 dark:border-slate-800">
+        <section id="liquid-gravity" className="py-12 border-t border-slate-200 dark:border-slate-800 scroll-mt-24">
           <LiquidGravity />
         </section>
 
-        <div className="border-t border-slate-200 dark:border-slate-800">
+        <p className="pt-12 max-w-2xl text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+          Daniel&apos;s earlier career also included substantial SEO, conversion optimization, and
+          marketing-technology work.{" "}
+          <Link
+            href="/marketing"
+            className="font-semibold text-blue-600 dark:text-sky-400 hover:underline">
+            See the marketing &amp; analytics side of this experience →
+          </Link>
+        </p>
+
+        <div className="mt-12 border-t border-slate-200 dark:border-slate-800">
           <PageOutro />
         </div>
       </div>

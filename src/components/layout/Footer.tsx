@@ -35,6 +35,13 @@ const Footer: React.FC = () => {
             </li>
             <li>
               <Link
+                href="/marketing"
+                className="text-secondary hover:text-accent">
+                Marketing & Analytics
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/contact"
                 className="text-secondary hover:text-accent">
                 Contact

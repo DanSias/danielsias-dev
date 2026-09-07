@@ -1,6 +1,9 @@
 import { ReactNode } from "react";
 
-type System = { title: string; description: string };
+// Shared shape for both `systems` (things built) and `initiatives` (marketing/
+// analytics work led). Keeping one shape avoids duplicating this markup per
+// case study, while the two props + labels keep "built" vs "led" distinct.
+type WorkItem = { title: string; description: string; metrics?: string[] };
 
 type Props = {
   company: string;
@@ -8,8 +11,13 @@ type Props = {
   dates: string;
   badge?: string;
   summary?: string;
-  systems?: System[];
-  impact: string[];
+  systems?: WorkItem[];
+  /** Heading shown above `systems`, e.g. "Systems & Platforms Built". */
+  systemsLabel?: string;
+  initiatives?: WorkItem[];
+  /** Heading shown above `initiatives`, e.g. "Marketing Initiatives Led". */
+  initiativesLabel?: string;
+  impact?: string[];
   technologies: string[];
   size: "lg" | "md" | "sm";
   children?: ReactNode;
@@ -21,6 +29,43 @@ const headingSize: Record<Props["size"], string> = {
   sm: "text-xl",
 };
 
+function WorkItemGroup({ label, items }: { label?: string; items: WorkItem[] }) {
+  return (
+    <div className="mt-6 space-y-4">
+      {label && (
+        <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+          {label}
+        </h3>
+      )}
+      <div className="space-y-4">
+        {items.map((item) => (
+          <div
+            key={item.title}
+            className="pl-4 border-l-2 border-slate-300 dark:border-slate-700">
+            <h4 className="font-semibold text-sm text-gray-900 dark:text-white">
+              {item.title}
+            </h4>
+            <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              {item.description}
+            </p>
+            {item.metrics && item.metrics.length > 0 && (
+              <div className="mt-2 flex flex-wrap gap-1.5">
+                {item.metrics.map((metric) => (
+                  <span
+                    key={metric}
+                    className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-emerald-50 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
+                    {metric}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 const ExperienceCaseStudy: React.FC<Props> = ({
   company,
   role,
@@ -28,6 +73,9 @@ const ExperienceCaseStudy: React.FC<Props> = ({
   badge,
   summary,
   systems,
+  systemsLabel,
+  initiatives,
+  initiativesLabel,
   impact,
   technologies,
   size,
@@ -57,34 +105,27 @@ const ExperienceCaseStudy: React.FC<Props> = ({
         </p>
       )}
 
-      {systems && systems.length > 0 && size === "md" && (
-        <div className="mt-6 space-y-4">
-          {systems.map((system) => (
-            <div
-              key={system.title}
-              className="pl-4 border-l-2 border-slate-300 dark:border-slate-700">
-              <h3 className="font-semibold text-sm text-gray-900 dark:text-white">
-                {system.title}
-              </h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-                {system.description}
-              </p>
-            </div>
-          ))}
-        </div>
+      {systems && systems.length > 0 && (
+        <WorkItemGroup label={systemsLabel} items={systems} />
+      )}
+
+      {initiatives && initiatives.length > 0 && (
+        <WorkItemGroup label={initiativesLabel} items={initiatives} />
       )}
 
       {children}
 
-      <div className="mt-6 flex flex-wrap gap-2">
-        {impact.map((item) => (
-          <span
-            key={item}
-            className="inline-flex items-center px-4 py-1.5 rounded-md text-sm font-medium bg-emerald-50 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
-            {item}
-          </span>
-        ))}
-      </div>
+      {impact && impact.length > 0 && (
+        <div className="mt-6 flex flex-wrap gap-2">
+          {impact.map((item) => (
+            <span
+              key={item}
+              className="inline-flex items-center px-4 py-1.5 rounded-md text-sm font-medium bg-emerald-50 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
+              {item}
+            </span>
+          ))}
+        </div>
+      )}
 
       <div className="mt-3 flex flex-wrap gap-2">
         {technologies.map((tech) => (

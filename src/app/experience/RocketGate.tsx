@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ExperienceCaseStudy from "./ExperienceCaseStudy";
 import FlagshipRotation from "@/app/projects/FlagshipRotation";
+import { rocketGateAdoptionMetrics } from "@/constants/marketingEvidence";
 
 const supportingSystems = [
   {
@@ -27,15 +28,11 @@ const supportingSystems = [
   {
     title: "Developer Documentation & Onboarding",
     description:
-      "Modernized integration guides and support resources for merchants and internal teams: cutting the time it takes new merchants and engineers to get up to speed.",
+      "Modernized integration guides, SDK usage examples, and support resources for merchants and internal teams, and connected that knowledge base to the support-ticket workflow so relevant documentation surfaces automatically when a ticket is opened.",
   },
 ];
 
-const impact = [
-  "Reduced ticket response time",
-  "Streamlined customer onboarding",
-  "Cut manual engineering effort through automation",
-];
+const impact = [...rocketGateAdoptionMetrics, "Cut manual engineering effort through automation"];
 
 const technologies = [
   "Laravel",
@@ -109,6 +106,15 @@ const RocketGate: React.FC = () => {
           </div>
         ))}
       </div>
+
+      <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+        Verbatim, Knowledge Exporter, and this documentation work are separate systems that
+        function together as one developer-enablement ecosystem: centralized technical
+        documentation, a searchable, RAG-grounded knowledge base, and natural-language retrieval
+        surfaced directly in the support workflow. Together, they cut average new-merchant
+        integration onboarding from roughly 10 active hours to 3, and reduced integration-related
+        ticket volume by roughly 30%.
+      </p>
     </ExperienceCaseStudy>
   );
 };

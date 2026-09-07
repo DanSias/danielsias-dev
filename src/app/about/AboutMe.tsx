@@ -49,6 +49,17 @@ const AboutMe: React.FC = () => {
             I&apos;ll ship something boring and reliable over something
             impressive and fragile.
           </p>
+          <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+            That approach also comes out of a decade-plus of digital
+            marketing, SEO, and analytics — full-stack development was part
+            of that work from the start, and it became the deeper focus
+            over time.{" "}
+            <Link
+              href="/marketing"
+              className="font-semibold text-blue-600 dark:text-sky-400 hover:underline">
+              More on that background →
+            </Link>
+          </p>
         </section>
 
         <section>
