@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaCode, FaServer, FaDatabase, FaCloud, FaChevronDown } from "react-icons/fa";
+import { FaCode, FaServer, FaDatabase, FaCloud } from "react-icons/fa";
 import { FaRobot, FaUsersGear } from "react-icons/fa6";
 
 const skills = [
@@ -34,7 +34,7 @@ const skills = [
   {
     title: "AI-Assisted Development",
     description:
-      "Using AI-assisted workflows to prototype quickly and ship maintainable, production-ready features",
+      "LLM Integration, RAG Pipelines, AI-Assisted Coding, Local LLMs, Workflow Automation",
     icon: FaRobot,
   },
 ];
@@ -44,30 +44,25 @@ const SkillsIcons = () => {
     <section className="max-w-6xl mx-auto text-center">
       <h2 className="text-heading">Skills</h2>
       <p className="text-subhead">Core competencies and technical expertise.</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 items-start">
-        {skills.map((skill, index) => (
-          <details
-            key={index}
-            className="group text-left rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
-            <summary className="flex flex-col items-center gap-2 p-4 list-none cursor-pointer select-none [&::-webkit-details-marker]:hidden marker:content-none rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
-                <skill.icon className="text-sky-500 dark:text-sky-300 text-base" />
-              </div>
-              <span className="flex items-center gap-1.5 text-primary text-base font-semibold text-center">
-                {skill.title}
-                <FaChevronDown className="text-xs text-gray-400 transition-transform group-open:rotate-180" />
-              </span>
-            </summary>
-            <p className="px-4 pb-4 text-sm text-gray-500 dark:text-gray-400 text-center leading-relaxed">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {skills.map((skill) => (
+          <div
+            key={skill.title}
+            className="flex flex-col items-center gap-2 p-4 text-left rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
+              <skill.icon className="text-sky-500 dark:text-sky-300 text-base" />
+            </div>
+            <h3 className="text-primary text-base font-semibold text-center">{skill.title}</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400 text-center leading-relaxed">
               {skill.description}
             </p>
-          </details>
+          </div>
         ))}
       </div>
-      <div className="mt-6">
+      <div className="mt-8">
         <Link
           href="/skills"
-          className="text-blue-600 dark:text-sky-400 font-semibold hover:underline">
+          className="link-outline">
           View All Skills →
         </Link>
       </div>

@@ -108,7 +108,7 @@ const FeaturedProjects: React.FC = () => {
       <div className="mt-8 text-center">
         <Link
           href="/projects"
-          className="text-blue-600 dark:text-sky-400 font-semibold hover:underline">
+          className="link-outline">
           View All Projects →
         </Link>
       </div>

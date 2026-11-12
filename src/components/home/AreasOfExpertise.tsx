@@ -4,13 +4,13 @@ const focusAreas = [
   {
     title: "Payment Platform Engineering",
     description:
-      "Full-stack engineering on payment infrastructure at RocketGate: merchant integrations, transaction reconstruction tooling, and the internal software behind payment platform operations.",
+      "Full-stack engineering on payment infrastructure at RocketGate: built merchant integrations, transaction reconstruction tooling, and internal software supporting payment platform operations.",
     icon: FaCreditCard,
   },
   {
     title: "Developer Tooling & Workflow Visibility",
     description:
-      "Leading Workflow Intelligence, a Laravel/Vue platform giving engineering teams visibility into work items, stage history, and delivery progress.",
+      "Contributed to Workflow Intelligence at RocketGate, a Laravel/Vue platform that gave engineering teams visibility into work items, stage history, and delivery progress.",
     icon: FaDiagramProject,
   },
   {
@@ -25,7 +25,7 @@ const AreasOfExpertise: React.FC = () => {
   return (
     <section className="max-w-6xl mx-auto">
       <h2 className="text-heading">Areas of Expertise</h2>
-      <p className="text-subhead">Current engineering focus at RocketGate.</p>
+      <p className="text-subhead">Specialized experience across payment systems, developer tooling, and AI-assisted software.</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {focusAreas.map((area) => (

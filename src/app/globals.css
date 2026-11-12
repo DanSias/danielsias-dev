@@ -41,6 +41,10 @@ html.dark {
   @apply text-slate-800 dark:text-sky-100;
 }
 
+.link-outline {
+  @apply inline-block rounded-lg border border-sky-600/40 dark:border-sky-400/40 px-5 py-2.5 font-semibold text-blue-600 dark:text-sky-400 transition-colors hover:border-sky-600 dark:hover:border-sky-400 hover:bg-sky-500/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500;
+}
+
 .text-heading {
   @apply text-4xl text-center font-bold text-gray-900 dark:text-sky-50;
 }

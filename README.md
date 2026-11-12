@@ -48,7 +48,7 @@ The dev server runs at [http://localhost:3000](http://localhost:3000).
 - Desktop/mobile navigation, including keyboard tab order and active-state (`aria-current`)
 - Theme toggle behavior and persistence across navigation, including full-viewport background checks on shorter pages
 - The resume page's PDF preview, download link, and fallback link
-- The skills page's native `<details>`/`<summary>` disclosures (click, keyboard, mobile)
+- Homepage skill cards: all descriptions visible without interaction, equal row heights, no mobile overflow
 - Cross-page link continuity (flagship project CTA, experience/projects cross-links, hash anchors)
 - Contact page actions (mailto, social links) and layout (no overflow, no orphaned closing line)
 - Responsive/overflow checks at desktop, tablet, and small mobile widths

@@ -7,7 +7,7 @@ import { projects } from "@/constants/projects";
 const flagship = {
   title: "Workflow Intelligence",
   description:
-    "The flagship platform I'm building at RocketGate: replacing scattered status updates with a single source of truth for how engineering work actually moves.",
+    "A flagship platform built at RocketGate: replacing scattered status updates with a single source of truth for how engineering work actually moves.",
   technologies: ["Laravel", "Vue", "TypeScript"],
 };
 
@@ -20,8 +20,8 @@ const LiveProjects = () => {
     <section className="max-w-6xl mx-auto">
       <h2 className="text-heading">Selected Work</h2>
       <p className="text-subhead">
-        The flagship platform I&apos;m building at RocketGate, and the
-        professional systems built around it.
+        Production-focused software, developer tools, and internal platforms
+        I&apos;ve designed and built.
       </p>
 
       {/* Flagship: Workflow Intelligence */}
